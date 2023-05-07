@@ -5,8 +5,11 @@ class_name SuspensionComponent
 
 # This class is responsible for providing suspension for the Rigidbody
 
-@onready @export var suspension_model: MeshInstance3D
-@onready @export var player_body: RigidBody3D
+@export var suspension_model_path: MeshInstance3D
+@export var player_body_path: RigidBody3D
+
+@onready var suspension_model: MeshInstance3D = suspension_model_path
+@onready var player_body: RigidBody3D = player_body_path
 @export var suspension_strength: float = 12000
 @export var suspension_damping: float = 600
 @export var downforce_mul: float = 0.8

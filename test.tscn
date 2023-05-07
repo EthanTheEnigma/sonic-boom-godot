@@ -245,8 +245,8 @@ transform = Transform3D(-0.866025, 0, -0.5, 4.37114e-08, -1, -7.57103e-08, -0.5,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6858, 13.8444, 175.47)
 lock_rotation = true
 
-[node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node") instance=ExtResource("9_bpfap")]
-player_node = NodePath("../Player")
+[node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("9_bpfap")]
+player_node_path = NodePath("../Player")
 
 [node name="BoomHUDComponent" parent="." instance=ExtResource("9_kdqqc")]
 

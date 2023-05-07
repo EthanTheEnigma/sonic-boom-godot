@@ -1,9 +1,6 @@
 extends "res://Assets/Scripts/Physics/MovementStateComponent.gd"
 class_name BoomMovementStateComponent
 
-@onready @export var player_body: RigidBody3D
-@onready @export var boost_manager: BoostManager
-
 @export var can_buffer_jump: bool = true
 @export var top_speed: float = 30
 @export var top_speed_boost: float = 50
@@ -24,6 +21,11 @@ class_name BoomMovementStateComponent
 @export var slope_accel_mul_rolling: float = 30
 @export var downforce_mul: float = 0.8
 @export var downforce_mul_boost: float = 0
+@export var player_body_path: RigidBody3D
+@export var boost_manager_path: BoostManager
+
+@onready var player_body: RigidBody3D = player_body_path
+@onready var boost_manager: BoostManager = boost_manager_path
 
 enum MovementState {
 	NORMAL = 0,

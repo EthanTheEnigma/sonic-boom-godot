@@ -4,9 +4,11 @@ class_name MovementForcesComponent
 @onready var controls: Controls = $"/root/GameControls"
 @onready var spatial_vars: SpatialVarStatics = $"/root/SpatialVarStatics"
 @onready var hud_vars: HUDStatics = $"/root/HudStatics"
-@onready @export var player_body: RigidBody3D
-@onready @export var accel_curve: Curve
 @export var jump_allowed: bool = true
+@export var player_body_path: RigidBody3D
+@export var accel_curve_path: Curve
+@onready var player_body: RigidBody3D = player_body_path
+@onready var accel_curve: Curve = accel_curve_path
 
 # These can be modified by a MovementStateComponent, or used on their own
 var drag_coefficient: float = 0.4

@@ -8,118 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Node3D",
-"class": &"AlignHelper",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Utility/AlignHelper.gd"
-}, {
-"base": "Node3D",
-"class": &"AlignedNode",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Utility/AlignedNode.gd"
-}, {
-"base": "Node",
-"class": &"AlignmentHelper",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Utility/AlignmentStatics.gd"
-}, {
-"base": "RigidBody3D",
-"class": &"BoomCharacterControllerOld",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Player/BoomCharacterControllerOld.gd"
-}, {
-"base": "Control",
-"class": &"BoomHUDComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/HUD/BoomHUDComponent.gd"
-}, {
-"base": "Node3D",
-"class": &"BoomMovementStateComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Player/BoomMovementStateComponent.gd"
-}, {
-"base": "Node3D",
-"class": &"BoostManager",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Player/BoostManager.gd"
-}, {
-"base": "Camera3D",
-"class": &"ChaseCameraLookAtComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/ChaseCamera/ChaseCameraLookAtComponent.gd"
-}, {
-"base": "CharacterBody3D",
-"class": &"ChaseCameraRootComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/ChaseCamera/ChaseCameraRootComponent.gd"
-}, {
-"base": "Node3D",
-"class": &"Controls",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Player/Controls.gd"
-}, {
-"base": "Control",
-"class": &"DebugUI",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/DebugUI.gd"
-}, {
-"base": "Node",
-"class": &"HUDStatics",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/HUD/HUDStatics.gd"
-}, {
-"base": "Node3D",
-"class": &"Mouse3rdPersonCam",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Mouse3rdPersonCam.gd"
-}, {
-"base": "Node3D",
-"class": &"MovementComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/MovementComponent.gd"
-}, {
-"base": "Node",
-"class": &"MovementForcesComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Physics/MovementForcesComponent.gd"
-}, {
-"base": "Node3D",
-"class": &"MovementStateComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Physics/MovementStateComponent.gd"
-}, {
-"base": "Node3D",
-"class": &"PhysicsManager",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/PhysicsManager.gd"
-}, {
-"base": "RayCast3D",
-"class": &"SuspensionComponent",
-"language": &"GDScript",
-"path": "res://Assets/Scripts/Physics/SuspensionComponent.gd"
-}]
-_global_script_class_icons={
-"AlignHelper": "",
-"AlignedNode": "",
-"AlignmentHelper": "",
-"BoomCharacterControllerOld": "",
-"BoomHUDComponent": "",
-"BoomMovementStateComponent": "",
-"BoostManager": "",
-"ChaseCameraLookAtComponent": "",
-"ChaseCameraRootComponent": "",
-"Controls": "",
-"DebugUI": "",
-"HUDStatics": "",
-"Mouse3rdPersonCam": "",
-"MovementComponent": "",
-"MovementForcesComponent": "",
-"MovementStateComponent": "",
-"PhysicsManager": "",
-"SuspensionComponent": ""
-}
-
 [application]
 
 config/name="Sonic-Boom"
@@ -138,37 +26,37 @@ HudStatics="*res://Assets/Scripts/HUD/HUDStatics.gd"
 
 forward={
 "deadzone": 0.05,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
 ]
 }
 backward={
 "deadzone": 0.05,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
 ]
 }
 left={
 "deadzone": 0.05,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
 ]
 }
 right={
 "deadzone": 0.05,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":1.0,"script":null)
 ]
 }
 jump={
 "deadzone": 0.05,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
 boost={
 "deadzone": 0.05,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":9,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
@@ -194,7 +82,7 @@ camera_down={
 }
 roll={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194326,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
 ]
 }
@@ -205,6 +93,8 @@ roll={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=2
+textures/canvas_textures/default_texture_repeat=1
 global_illumination/voxel_gi/quality=1
 textures/default_filters/anisotropic_filtering_level=3
 camera/depth_of_field/depth_of_field_bokeh_shape=2
@@ -212,5 +102,3 @@ camera/depth_of_field/depth_of_field_bokeh_quality=3
 camera/depth_of_field/depth_of_field_use_jitter=true
 textures/decals/filter=5
 anti_aliasing/quality/msaa_3d=3
-textures/canvas_textures/default_texture_filter=2
-textures/canvas_textures/default_texture_repeat=1

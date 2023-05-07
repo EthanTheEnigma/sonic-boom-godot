@@ -1,8 +1,11 @@
 extends Node3D
 class_name Mouse3rdPersonCam
 
-@onready @export var player_node: Node3D
-@onready @export var springarm: SpringArm3D
+@export var player_node_path: Node3D
+@export var springarm_path: SpringArm3D
+
+@onready var player_node: Node3D = player_node_path
+@onready var springarm: SpringArm3D = springarm_path
 
 @onready var controls: GameControls = $"/root/GameControls"
 @onready var alignment_funcs: AlignmentStatics = $"/root/AlignmentStatics"

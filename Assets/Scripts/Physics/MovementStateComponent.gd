@@ -1,9 +1,13 @@
 extends Node3D
 class_name MovementStateComponent
 
-@onready @export var movement_forces_component: MovementForcesComponent
-@onready @export var suspension_component: SuspensionComponent
-@onready @export var coyote_jump_timer: Timer
+@export var movement_forces_component_path: MovementForcesComponent
+@export var suspension_component_path: SuspensionComponent
+@export var coyote_jump_timer_path: Timer
+
+@onready var movement_forces_component: MovementForcesComponent = movement_forces_component_path
+@onready var suspension_component: SuspensionComponent = suspension_component_path
+@onready var coyote_jump_timer: Timer = coyote_jump_timer_path
 
 @onready var controls: Controls = $"/root/GameControls"
 @onready var spatial_vars: SpatialVarStatics = $"/root/SpatialVarStatics"
