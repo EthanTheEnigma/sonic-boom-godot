@@ -21,11 +21,11 @@ class_name BoomMovementStateComponent
 @export var slope_accel_mul_rolling: float = 30
 @export var downforce_mul: float = 0.8
 @export var downforce_mul_boost: float = 0
-@export var player_body_path: RigidBody3D
-@export var boost_manager_path: BoostManager
+##@export var player_body_path: RigidBody3D
+##@export var boost_manager_path: BoostManager
 
-@onready var player_body: RigidBody3D = player_body_path
-@onready var boost_manager: BoostManager = boost_manager_path
+@onready var player_body: RigidBody3D = $".."
+@onready var boost_manager: BoostManager = $"../BoostManagerComponent"
 
 enum MovementState {
 	NORMAL = 0,

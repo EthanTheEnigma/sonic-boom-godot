@@ -6,13 +6,13 @@ enum MovementState {
 	BOOST = 2
 }
 
-@export var boost_sound_path: AudioStreamPlayer
-@export var wind_sound_path: AudioStreamPlayer
-@export var roll_sound_path: AudioStreamPlayer
+##@export var boost_sound_path: AudioStreamPlayer
+##@export var wind_sound_path: AudioStreamPlayer
+##@export var roll_sound_path: AudioStreamPlayer
 
-@onready var boost_sound: AudioStreamPlayer = boost_sound_path
-@onready var wind_sound: AudioStreamPlayer = wind_sound_path
-@onready var roll_sound: AudioStreamPlayer = roll_sound_path
+@onready var boost_sound: AudioStreamPlayer = $"../BoostSoundPlayer"
+@onready var wind_sound: AudioStreamPlayer = $"../WindSoundPlayer"
+@onready var roll_sound: AudioStreamPlayer = $"../RollSoundPlayer"
 
 @onready var hud_vars: HUDStatics = $"/root/HudStatics"
 

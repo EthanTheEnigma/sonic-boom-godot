@@ -3,10 +3,10 @@ class_name BoostManager
 
 @onready var input_manager: Controls = $"/root/GameControls"
 @onready var hud_vars: HUDStatics = $"/root/HudStatics"
-@export var movement_state_component_path: BoomMovementStateComponent
+##@export var movement_state_component_path: BoomMovementStateComponent
 @export var max_boost_energy: float = 480
 
-@onready var movement_state_component: BoomMovementStateComponent = movement_state_component_path
+@onready var movement_state_component: BoomMovementStateComponent = $"../BoomMovementStateComponent"
 
 var current_boost_energy: float = max_boost_energy
 
