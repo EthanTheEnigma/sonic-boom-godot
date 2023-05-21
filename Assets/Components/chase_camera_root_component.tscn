@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpmu3uk4i3hcd"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/ChaseCamera/ChaseCameraRootComponent.gd" id="1_j84fc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0pbjp"]
+
+[node name="ChaseCameraRootComponent" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
+script = ExtResource("1_j84fc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0pbjp")

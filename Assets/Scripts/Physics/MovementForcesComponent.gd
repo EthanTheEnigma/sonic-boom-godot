@@ -6,9 +6,9 @@ class_name MovementForcesComponent
 @onready var hud_vars: HUDStatics = $"/root/HudStatics"
 @export var jump_allowed: bool = true
 ##@export var player_body_path: RigidBody3D
-@export var accel_curve_path: Curve
+#@export var accel_curve_path: Curve
 @onready var player_body: RigidBody3D = $".."
-@onready var accel_curve: Curve = accel_curve_path
+#@onready var accel_curve: Curve = accel_curve_path
 
 # These can be modified by a MovementStateComponent, or used on their own
 var drag_coefficient: float = 0.4
@@ -66,7 +66,6 @@ func apply_accel(top_speed: float, acceleration: float, slope_mul: float, mask_d
 	top_speed *= 1 + (Vector3(0, -1, 0).dot(controls.wish_dir) * slope_mul)
 	if player_body.get_linear_velocity().length() < top_speed:
 		acceleration *= 1 + (Vector3(0, -1, 0).dot(controls.wish_dir) * slope_mul)
-		acceleration *= accel_curve.sample(accel_curve_point)
 		player_body.apply_central_force(controls.wish_dir * acceleration)
 	else:
 		if controls.wish_dir.length() > 0:

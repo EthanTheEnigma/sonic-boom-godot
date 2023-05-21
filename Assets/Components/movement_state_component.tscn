@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqei0rhlws68j"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Physics/MovementStateComponent.gd" id="1_ql556"]
+
+[node name="MovementStateComponent" type="Node3D"]
+script = ExtResource("1_ql556")

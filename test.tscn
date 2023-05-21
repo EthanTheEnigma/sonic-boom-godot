@@ -1,17 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://bvd02ne43g7x0"]
+[gd_scene load_steps=14 format=3 uid="uid://bvd02ne43g7x0"]
 
 [ext_resource type="Texture2D" uid="uid://djdcjn2740a3s" path="res://Debug-Textures/Dark/texture_01.png" id="1_khnoy"]
-[ext_resource type="Texture2D" uid="uid://w1w3q2l4d58b" path="res://Debug-Textures/Green/texture_09.png" id="5_fanlt"]
-[ext_resource type="PackedScene" uid="uid://gqq1sftdoa3h" path="res://Assets/Meshes/Basic/GH-Ramp-45.glb" id="7_m45by"]
-[ext_resource type="PackedScene" uid="uid://deb2pgdrfdb8e" path="res://Assets/Entities/player.res" id="8_5hhl3"]
-[ext_resource type="PackedScene" uid="uid://crqnjiux5mtoa" path="res://Assets/Meshes/Basic/GH-Ramp-45-Base.glb" id="8_ffl40"]
-[ext_resource type="PackedScene" uid="uid://b6vpikymcmpcu" path="res://Assets/Meshes/mod-roads-32-32/road.glb" id="9_52pf1"]
-[ext_resource type="PackedScene" uid="uid://rt5v3qtrch16" path="res://Assets/Entities/mouse_3_rd_person_cam.res" id="9_bpfap"]
-[ext_resource type="PackedScene" uid="uid://dywvm7fukrffg" path="res://Assets/Components/boom_hud_component.res" id="9_kdqqc"]
-[ext_resource type="PackedScene" uid="uid://detg5l5unvval" path="res://Assets/Meshes/Basic/loop-de-loop.glb" id="9_web6k"]
-[ext_resource type="PackedScene" uid="uid://ddyschviyc8as" path="res://Assets/Meshes/mod-roads-32-32/road-flat-turn-30-deg.glb" id="10_0tbt3"]
-[ext_resource type="PackedScene" uid="uid://53rlrxvvvaf7" path="res://Assets/Meshes/mod-roads-32-32/road-ramp-up-10.5-meters.glb" id="11_cpnwx"]
-[ext_resource type="PackedScene" uid="uid://ccgwok36et4x6" path="res://Assets/Meshes/mod-roads-32-32/road-ramp-down-10.5-meters.glb" id="12_tmrex"]
+[ext_resource type="PackedScene" uid="uid://bgvu60lqu4l8r" path="res://Assets/Entities/player.tscn" id="2_4g3vq"]
+[ext_resource type="PackedScene" uid="uid://bie62tdmtt5an" path="res://Assets/Entities/mouse_3_rd_person_cam.tscn" id="3_wo3kk"]
+[ext_resource type="PackedScene" uid="uid://0f3iirwwlyxq" path="res://Assets/Components/boom_hud_component.tscn" id="4_77rds"]
+[ext_resource type="PackedScene" uid="uid://c4w06qujmqeuk" path="res://Assets/Meshes/64x64-ish/flats/mod-road-ramp-90-curve.gltf" id="5_m4ftw"]
+[ext_resource type="PackedScene" uid="uid://hjtiw2flkc6x" path="res://Assets/Meshes/64x64-ish/flats/mod-road-ramp-45-curve.gltf" id="6_co8qr"]
+[ext_resource type="PackedScene" uid="uid://dgo6ffj60nu0v" path="res://Assets/Meshes/64x64-ish/flats/mod-road-ramp-225-curve.gltf" id="7_r80wa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fn0xa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,18 +37,6 @@ uv2_triplanar_sharpness = 2.0
 uv2_world_triplanar = true
 texture_filter = 5
 
-[sub_resource type="BoxMesh" id="BoxMesh_07thl"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81shx"]
-albedo_texture = ExtResource("5_fanlt")
-uv1_scale = Vector3(0.01, 0.01, 0.01)
-uv1_triplanar = true
-uv1_world_triplanar = true
-uv2_triplanar = true
-uv2_world_triplanar = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gging"]
-
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -75,200 +58,21 @@ shape = SubResource("BoxShape3D_0v3ql")
 mesh = SubResource("BoxMesh_rxvvy")
 surface_material_override/0 = SubResource("StandardMaterial3D_akxlk")
 
-[node name="GH-Ramp-46" parent="Geom" instance=ExtResource("7_m45by")]
-transform = Transform3D(-2.18557e-07, 0, -9.9, 0, 5, 0, 5, 0, -4.32743e-07, 109.644, 1, 125.406)
-
-[node name="GH-Ramp-45-Base" parent="Geom/GH-Ramp-46" instance=ExtResource("8_ffl40")]
-
-[node name="GH-Ramp-47" parent="Geom" instance=ExtResource("7_m45by")]
-transform = Transform3D(-2.32026e-06, 0, 50.9841, 0, 42.4506, 0, -53.0814, 0, -2.22859e-06, -239.065, 1, 205.689)
-
-[node name="GH-Ramp-45-Base" parent="Geom/GH-Ramp-47" instance=ExtResource("8_ffl40")]
-
-[node name="loop-de-loop" parent="Geom" instance=ExtResource("9_web6k")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 67.561, 1, 141.058)
-
-[node name="loop-de-loop2" parent="Geom" instance=ExtResource("9_web6k")]
-transform = Transform3D(-1.6404e-07, 0, -3.75279, 0, 3.75279, 0, 3.75279, 0, -1.6404e-07, -404.439, 1, 141.058)
-
-[node name="Platform" type="Node3D" parent="Geom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.81352, 128.569, 111.556, -185.986)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Geom/Platform"]
-transform = Transform3D(40.5504, 0, 0, 0, 1, 0, 0, 0, 87.619, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geom/Platform/StaticBody3D"]
-mesh = SubResource("BoxMesh_07thl")
-surface_material_override/0 = SubResource("StandardMaterial3D_81shx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geom/Platform/StaticBody3D"]
-shape = SubResource("BoxShape3D_gging")
-
-[node name="Platform2" type="Node3D" parent="Geom"]
-transform = Transform3D(4.80177, 0, 0, 0, 1, 0, 0, 0, 5.08909, -385.47, 154.988, 717.947)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Geom/Platform2"]
-transform = Transform3D(40.5504, 0, 0, 0, 1, 0, 0, 0, 87.619, 0, 0, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Geom/Platform2/StaticBody3D"]
-mesh = SubResource("BoxMesh_07thl")
-surface_material_override/0 = SubResource("StandardMaterial3D_81shx")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geom/Platform2/StaticBody3D"]
-shape = SubResource("BoxShape3D_gging")
-
-[node name="Road1" type="Node3D" parent="Geom"]
-
-[node name="road" parent="Geom/Road1" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 134)
-
-[node name="road2" parent="Geom/Road1" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 102)
-
-[node name="road3" parent="Geom/Road1" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 70)
-
-[node name="road-flat-turn-30-deg" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 38)
-
-[node name="road-flat-turn-30-deg2" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 45, 1, 16)
-
-[node name="road-flat-turn-30-deg3" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 64, 1, 3)
-
-[node name="road-flat-turn-30-deg4" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 88, 1, 1)
-
-[node name="road-flat-turn-30-deg5" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 110, 1, 11)
-
-[node name="road-flat-turn-30-deg6" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 121, 1, 22)
-
-[node name="road-flat-turn-30-deg7" parent="Geom/Road1" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, 143, 1, 32)
-
-[node name="road-ramp-up-105-meters" parent="Geom/Road1" instance=ExtResource("11_cpnwx")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 175, 1, 32)
-
-[node name="road-ramp-up-105-meters2" parent="Geom/Road1" instance=ExtResource("11_cpnwx")]
-transform = Transform3D(-3.78552e-08, -0.5, -0.866025, -2.18557e-08, 0.866025, -0.5, 1, 0, -4.37114e-08, 204.981, 17.1737, 32)
-
-[node name="road-ramp-up-105-meters3" parent="Geom/Road1" instance=ExtResource("11_cpnwx")]
-transform = Transform3D(-2.18557e-08, -0.866025, -0.5, -3.78552e-08, 0.5, -0.866025, 1, 0, -4.37114e-08, 222.981, 46.1737, 32)
-
-[node name="road7" parent="Geom/Road1" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1, 70)
-
-[node name="Road2" type="Node3D" parent="Geom"]
-
-[node name="road4" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, 126)
-
-[node name="road5" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, 94)
-
-[node name="road6" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, 62)
-
-[node name="road11" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, 31)
-
-[node name="road12" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, -1)
-
-[node name="road13" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, -33)
-
-[node name="road8" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -78, 1, -87)
-
-[node name="road9" parent="Geom/Road2" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -46, 1, -87)
-
-[node name="road-flat-turn-30-deg8" parent="Geom/Road2" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131, 1, -51)
-
-[node name="road-flat-turn-30-deg9" parent="Geom/Road2" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -121, 1, -72)
-
-[node name="road-flat-turn-30-deg10" parent="Geom/Road2" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -102, 1, -85)
-
-[node name="road-ramp-up-105-meters4" parent="Geom/Road2" instance=ExtResource("11_cpnwx")]
-transform = Transform3D(-4.37114e-08, 0, -2, 0, 4.2, 0, 1, 0, -8.74228e-08, 2, 0.268164, -87)
-
-[node name="road4" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -274.273, 155, 524.727)
-
-[node name="road5" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -242.273, 155, 524.727)
-
-[node name="road6" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -210.273, 155, 524.727)
-
-[node name="road11" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -179.273, 155, 524.727)
-
-[node name="road12" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -147.273, 155, 524.727)
-
-[node name="road13" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -115.273, 155, 524.727)
-
-[node name="road14" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -83.2727, 155, 524.727)
-
-[node name="road15" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -51.2727, 155, 524.727)
-
-[node name="road16" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -19.2727, 155, 524.727)
-
-[node name="road8" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-1, 0, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 34.7273, 155, 471.727)
-
-[node name="road9" parent="Geom" instance=ExtResource("9_52pf1")]
-transform = Transform3D(-1, 0, 8.74228e-08, -7.64274e-15, -1, -8.74228e-08, 8.74228e-08, -8.74228e-08, 1, 34.7273, 155, 439.727)
-
-[node name="road-flat-turn-30-deg8" parent="Geom" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 8.74228e-08, -1, -3.82137e-15, -1, -8.74228e-08, 4.37114e-08, -1.27274, 155, 524.727)
-
-[node name="road-flat-turn-30-deg9" parent="Geom" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(-0.5, 0, -0.866025, 7.57103e-08, -1, -4.37114e-08, -0.866025, -8.74228e-08, 0.5, 19.7273, 155, 514.727)
-
-[node name="road-flat-turn-30-deg10" parent="Geom" instance=ExtResource("10_0tbt3")]
-transform = Transform3D(-0.866025, 0, -0.5, 4.37114e-08, -1, -7.57103e-08, -0.5, -8.74228e-08, 0.866025, 32.7273, 155, 495.727)
-
-[node name="Player" parent="." instance=ExtResource("8_5hhl3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6858, 13.8444, 175.47)
+[node name="Player" parent="." instance=ExtResource("2_4g3vq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5604, 0)
 lock_rotation = true
 
-[node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("9_bpfap")]
+[node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("3_wo3kk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3024, 19.7734)
 player_node_path = NodePath("../Player")
 
-[node name="BoomHUDComponent" parent="." instance=ExtResource("9_kdqqc")]
+[node name="BoomHUDComponent" parent="." instance=ExtResource("4_77rds")]
 
-[node name="RampDown" type="Node3D" parent="."]
+[node name="mod-road-ramp-90-curve" parent="." instance=ExtResource("5_m4ftw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 1, -200)
 
-[node name="road-ramp-down-105-meters" parent="RampDown" instance=ExtResource("12_tmrex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2857, 128, 278.286)
+[node name="mod-road-ramp-45-curve" parent="." instance=ExtResource("6_co8qr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, -200)
 
-[node name="road-ramp-down-105-meters2" parent="RampDown" instance=ExtResource("12_tmrex")]
-transform = Transform3D(1, -2.18557e-08, -5.85622e-09, 2.18557e-08, 0.866025, 0.5, -5.85622e-09, -0.5, 0.866025, 35.2857, 113, 253.286)
-
-[node name="road" parent="RampDown" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, -4.2222e-08, -3.2398e-08, 4.2222e-08, 0.258819, 0.965926, -3.2398e-08, -0.965926, 0.258819, 35.2857, 90, 235.286)
-
-[node name="road2" parent="RampDown" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, -4.2222e-08, -3.2398e-08, 4.2222e-08, 0.258819, 0.965926, -3.2398e-08, -0.965926, 0.258819, 35.2857, 60, 227.286)
-
-[node name="road3" parent="RampDown" instance=ExtResource("9_52pf1")]
-transform = Transform3D(1, 0, 0, -8.88178e-16, 1, 0, 0, 0, 1, 35.2857, 1, 165.286)
-
-[node name="road-ramp-up-105-meters" parent="RampDown" instance=ExtResource("11_cpnwx")]
-transform = Transform3D(1, -4.2222e-08, -3.2398e-08, 4.2222e-08, 0.258819, 0.965926, -3.2398e-08, -0.965926, 0.258819, 35.2857, 30, 219.286)
-
-[node name="road-ramp-up-105-meters2" parent="RampDown" instance=ExtResource("11_cpnwx")]
-transform = Transform3D(1, -3.09086e-08, -1.28028e-08, 3.09086e-08, 0.707107, 0.707107, -1.28028e-08, -0.707107, 0.707107, 35.2857, 6, 196.286)
+[node name="mod-road-ramp-225-curve" parent="." instance=ExtResource("7_r80wa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1, -200)

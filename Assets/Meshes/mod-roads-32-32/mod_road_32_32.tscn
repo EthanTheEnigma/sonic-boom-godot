@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cabejv3sjt858"]
-
-[ext_resource type="PackedScene" uid="uid://gyupfvgpa6qc" path="res://Assets/Meshes/mod-roads-32-32/mod-road-32-32.glb" id="1_a6akj"]
-
-[node name="mod-road-32-32" instance=ExtResource("1_a6akj")]
