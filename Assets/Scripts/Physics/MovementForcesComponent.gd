@@ -37,6 +37,7 @@ var downforce: float = 0
 var ground_direction: Vector3 = Vector3(0, -1, 0)
 var force_direction: Vector3 = Vector3.ZERO
 var launch_direction: Vector3 = Vector3.ZERO
+var air_moving: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -134,6 +135,7 @@ func launch(velocity: Vector3) -> void:
 	player_body.set_axis_velocity(velocity)
 
 func ground_move() -> void:
+	air_moving = false
 	player_body.set_gravity_scale(0)
 	ground_plane_speed = total_speed
 	slip_angle_scalar = \
@@ -144,6 +146,7 @@ func ground_move() -> void:
 	#apply_drag(drag, Vector3(1, 1, 1))
 
 func air_move() -> void:
+	air_moving = true
 	if Input.is_action_pressed("jump"):
 		player_body.set_gravity_scale(0.75)
 	else:

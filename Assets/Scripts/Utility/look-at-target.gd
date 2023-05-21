@@ -1,6 +1,6 @@
-extends RigidBody3D
+extends Node3D
 
-@onready var hud_vars: HUDStatics = $"/root/HudStatics"
+@onready var player_body: RigidBody3D = $".."
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,6 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	pass
-	#hud_vars.current_speed = linear_velocity.length()
-
+	position = position - (position - player_body.get_linear_velocity().normalized() * 3)
