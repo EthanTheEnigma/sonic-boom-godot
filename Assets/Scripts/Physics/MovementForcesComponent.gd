@@ -16,12 +16,14 @@ var drag_area: float = 0.5
 var air_density: float = 1.225
 var traction_base: float = 2500
 var air_control: float = 1250
-var top_speed: float = 30
+var top_speed_base: float = 30
 var slope_accel_multiplier: float = 0
 var slope_jump_mul: float = 1
 var jump_force_base: float = 32
 var accel: float = 200
 var downforce_mul: float = 0.8
+# for the love of all that is holy do not set this to 0
+var friction: float = 100
 
 # these are variables whose values fluctuate on player input
 var slip_angle_scalar: float = 0
@@ -47,7 +49,7 @@ func update_global_movement_vars() -> void:
 		drag_coefficient * ( air_density * \
 		( (total_speed * total_speed) / 2 ) * \
 		drag_area )
-	accel_curve_point = clampf(ground_plane_speed, 1, top_speed) / top_speed
+	accel_curve_point = clampf(ground_plane_speed, 1, top_speed_base) / top_speed_base
 	slip_angle_degrees = rad_to_deg(acos(slip_angle_scalar))
 	if spatial_vars.grounded:
 		hud_vars.current_speed = player_body.get_linear_velocity().length()
@@ -55,12 +57,34 @@ func update_global_movement_vars() -> void:
 		hud_vars.current_speed = \
 			( player_body.get_linear_velocity() * Vector3(1, 0, 1) ).length()
 
-func apply_accel(acceleration: float, slope_mul: float) -> void:
-	acceleration *= 1 + (Vector3(0, -1, 0).dot(controls.wish_dir) * slope_mul)
-	acceleration *= accel_curve.sample(accel_curve_point)
-	player_body.apply_central_force(controls.wish_dir * acceleration)
+func apply_accel(top_speed: float, acceleration: float, slope_mul: float, mask_direction: Vector3) -> void:
+	if controls.wish_dir.length() > 0:
+		player_body.linear_damp = 0
+	else:
+		player_body.linear_damp = 0.25
+	top_speed *= 1 + (Vector3(0, -1, 0).dot(controls.wish_dir) * slope_mul)
+	if player_body.get_linear_velocity().length() < top_speed:
+		acceleration *= 1 + (Vector3(0, -1, 0).dot(controls.wish_dir) * slope_mul)
+		acceleration *= accel_curve.sample(accel_curve_point)
+		player_body.apply_central_force(controls.wish_dir * acceleration)
+	else:
+		if controls.wish_dir.length() > 0:
+			# mass divided by 10 here is just a magic number I found in testing.
+			# friction is just a value I use to determine how much momentum is preserved
+			# drag will be a better term
+			# but I'm gonna wait until I refactor because it's still in use for another thing rn
+			player_body.apply_central_force(\
+				player_body.get_linear_velocity().normalized() * \
+				( player_body.get_linear_velocity().length() * (player_body.mass / 10) ) \
+				* 1/friction )
+		# this is so slopes can still affect player movement even if over top speed
+		player_body.apply_central_force(\
+			player_body.get_linear_velocity().normalized() * \
+			( (Vector3(0, -1, 0)\
+				.dot(player_body.get_linear_velocity().normalized() * mask_direction) \
+				* slope_mul) * accel ) )
 
-func apply_grip(traction: float, mask_direction: Vector3) -> void:
+func apply_grip(compensation: bool, traction: float, mask_direction: Vector3) -> void:
 	var slippage = (slip_angle_scalar + 1) * (slip_angle_scalar + 1)
 	# grip is traction after adding all the modifiers
 	# consider traction to be like a raw value
@@ -68,11 +92,19 @@ func apply_grip(traction: float, mask_direction: Vector3) -> void:
 	var grip = traction
 	grip *= ( -0.125 * ( slippage * slippage ) + (0.75 * slippage) )
 	grip += 0.25 * traction
+	# this is so the player has higher grip at higher speeds
+	# there seems to be no ideal single value
+	# so we increase grip based on velocity
+	grip *= clampf(player_body.get_linear_velocity().length(), 1, 400) / 50
 	if slip_angle_scalar != 1 && controls.wish_dir.length() > 0:
 		var correction_dir = \
 			controls.wish_dir.normalized() - \
 			( player_body.get_linear_velocity() * mask_direction ).normalized()
 		player_body.apply_central_force(correction_dir * grip)
+		if compensation:
+			player_body\
+				.apply_central_force(controls.wish_dir.normalized() * \
+				(controls.wish_dir.normalized().dot(correction_dir) * grip))
 
 func apply_drag(current_drag: float, mask_direction: Vector3) -> void:
 	player_body.apply_central_force( \
@@ -87,7 +119,8 @@ func apply_drag(current_drag: float, mask_direction: Vector3) -> void:
 
 func jump(slope_mul: float) -> void:
 	var jump_force = clampf( \
-		jump_force_base * (1 + (Vector3(0, 1, 0).dot(controls.wish_dir) * slope_mul) ), \
+		jump_force_base * \
+		(1 + (Vector3(0, 1, 0).dot(controls.wish_dir) * slope_mul) ), \
 		jump_force_base, \
 		jump_force_base * 6 )
 	print(jump_force)
@@ -106,9 +139,9 @@ func ground_move() -> void:
 	slip_angle_scalar = \
 		player_body.get_linear_velocity().normalized().dot(controls.wish_dir)
 	
-	apply_accel(accel, slope_accel_multiplier)
-	apply_grip(traction_base, Vector3(1, 1, 1))
-	apply_drag(drag, Vector3(1, 1, 1))
+	apply_accel(top_speed_base, accel, slope_accel_multiplier, Vector3(1, 1, 1))
+	apply_grip(true, traction_base, Vector3(1, 1, 1))
+	#apply_drag(drag, Vector3(1, 1, 1))
 
 func air_move() -> void:
 	if Input.is_action_pressed("jump"):
@@ -123,9 +156,9 @@ func air_move() -> void:
 	downforce = drag * downforce_mul
 	
 	
-	apply_accel(accel, slope_accel_multiplier)
-	apply_grip(air_control, Vector3(1, 0, 1))
-	apply_drag(drag, Vector3(1, 0, 1))
+	apply_accel(top_speed_base, accel, slope_accel_multiplier, Vector3(1, 0, 1))
+	apply_grip(true, air_control, Vector3(1, 0, 1))
+	#apply_drag(drag, Vector3(1, 0, 1))
 	
 	if player_body.get_linear_velocity().dot(ground_direction) < 0:
 		player_body.apply_central_force(ground_direction * downforce)

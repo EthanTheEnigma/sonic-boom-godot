@@ -79,28 +79,34 @@ func move_state_just_boosted():
 func move_state_normal():
 	boost_manager.increment_boost()
 	movement_forces_component.accel = accel
-	movement_forces_component.top_speed = top_speed
+	movement_forces_component.top_speed_base = top_speed
 	movement_forces_component.slope_accel_multiplier = base_slope_accel_mul
 	movement_forces_component.drag_area = frontal_area
 	movement_forces_component.drag_coefficient = drag_coefficient_rolling
 	movement_forces_component.downforce_mul = downforce_mul
+	# for the love of all that is holy do not set this to 0
+	movement_forces_component.friction = 2
 
 func move_state_roll():
 	boost_manager.increment_boost()
 	movement_forces_component.accel = accel_rolling
-	movement_forces_component.top_speed = top_speed
+	movement_forces_component.top_speed_base = top_speed
 	movement_forces_component.slope_accel_multiplier = slope_accel_mul_rolling
 	movement_forces_component.drag_area = frontal_area_rolling
 	movement_forces_component.drag_coefficient = drag_coefficient_rolling
 	movement_forces_component.downforce_mul = downforce_mul
+	# for the love of all that is holy do not set this to 0
+	movement_forces_component.friction = 400
 
 func move_state_boost():
 	boost_manager.decrement_boost()
 	movement_forces_component.traction_base = traction_base
 	movement_forces_component.air_control = traction_base
 	movement_forces_component.accel = accel_boost
-	movement_forces_component.top_speed = top_speed_boost
+	movement_forces_component.top_speed_base = top_speed_boost
 	movement_forces_component.slope_accel_multiplier = 0
 	movement_forces_component.drag_area = frontal_area_boosting
 	movement_forces_component.drag_coefficient = drag_coefficient_boosting
 	movement_forces_component.downforce_mul = downforce_mul_boost
+	# for the love of all that is holy do not set this to 0
+	movement_forces_component.friction = 1
