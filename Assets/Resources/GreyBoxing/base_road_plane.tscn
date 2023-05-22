@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://brrrx120q00gy"]
+
+[ext_resource type="PackedScene" uid="uid://dyjunyi3qhrah" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-base.gltf" id="1_d8s4v"]
+[ext_resource type="Script" path="res://Assets/Resources/GreyBoxing/tool-grey-box.gd" id="1_e48yo"]
+
+[node name="BaseRoadPlane" type="Node3D"]
+script = ExtResource("1_e48yo")
+
+[node name="mod-road-base" parent="." instance=ExtResource("1_d8s4v")]
+
+[node name="attach-point-1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
+
+[node name="attach-point-2" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -64, 0, -64)
+
+[node name="attach-point-3" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -64, 0, 2.79753e-06)
+
+[node name="attach-point-4" type="Node3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6.61223e-06, 0, 0)

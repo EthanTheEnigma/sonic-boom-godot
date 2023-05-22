@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://wt2y0idn30lt"]
+
+[ext_resource type="Script" path="res://Assets/Resources/GreyBoxing/tool-grey-box.gd" id="1_jqtts"]
+[ext_resource type="PackedScene" uid="uid://cfyqrvwelb3vp" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-90-curve.gltf" id="2_vvesk"]
+
+[node name="Ramp90" type="Node3D"]
+script = ExtResource("1_jqtts")
+
+[node name="mod-road-ramp-90-curve" parent="." instance=ExtResource("2_vvesk")]
+
+[node name="attach-point" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 64, -64)

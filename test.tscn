@@ -1,12 +1,34 @@
-[gd_scene load_steps=14 format=3 uid="uid://bvd02ne43g7x0"]
+[gd_scene load_steps=36 format=3 uid="uid://bvd02ne43g7x0"]
 
 [ext_resource type="Texture2D" uid="uid://djdcjn2740a3s" path="res://Debug-Textures/Dark/texture_01.png" id="1_khnoy"]
 [ext_resource type="PackedScene" uid="uid://bgvu60lqu4l8r" path="res://Assets/Entities/player.tscn" id="2_4g3vq"]
 [ext_resource type="PackedScene" uid="uid://bie62tdmtt5an" path="res://Assets/Entities/mouse_3_rd_person_cam.tscn" id="3_wo3kk"]
 [ext_resource type="PackedScene" uid="uid://0f3iirwwlyxq" path="res://Assets/Components/boom_hud_component.tscn" id="4_77rds"]
-[ext_resource type="PackedScene" uid="uid://c4w06qujmqeuk" path="res://Assets/Meshes/64x64-ish/flats/mod-road-ramp-90-curve.gltf" id="5_m4ftw"]
-[ext_resource type="PackedScene" uid="uid://hjtiw2flkc6x" path="res://Assets/Meshes/64x64-ish/flats/mod-road-ramp-45-curve.gltf" id="6_co8qr"]
-[ext_resource type="PackedScene" uid="uid://dgo6ffj60nu0v" path="res://Assets/Meshes/64x64-ish/flats/mod-road-ramp-225-curve.gltf" id="7_r80wa"]
+[ext_resource type="PackedScene" uid="uid://dmi2co3huw7b8" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-camber-15.gltf" id="5_ifcob"]
+[ext_resource type="PackedScene" uid="uid://0taytpb524ug" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-camber-45.gltf" id="6_46ejf"]
+[ext_resource type="PackedScene" uid="uid://d0kdr33iroouo" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-camber-30.gltf" id="7_k6gbb"]
+[ext_resource type="PackedScene" uid="uid://xmqcb073o1yu" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-curve-90.gltf" id="8_g0gva"]
+[ext_resource type="PackedScene" uid="uid://cmdyyrx6ma5wv" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-curve-15.gltf" id="9_hkk55"]
+[ext_resource type="PackedScene" uid="uid://dy5njexi71il7" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-curve-45.gltf" id="10_cx5e5"]
+[ext_resource type="PackedScene" uid="uid://dmuxjp23y68mq" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-curve-30.gltf" id="11_qombt"]
+[ext_resource type="PackedScene" uid="uid://dpbys63mcem8u" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-curve-60.gltf" id="12_jfvi0"]
+[ext_resource type="PackedScene" uid="uid://8fv57ed2sxbu" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-15-curve-skew.gltf" id="13_mlglp"]
+[ext_resource type="PackedScene" uid="uid://cy5662ere3ssc" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-15-curve.gltf" id="14_6vqi4"]
+[ext_resource type="PackedScene" uid="uid://cxmw7q7mxh0xt" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-30-curve.gltf" id="15_6cvv4"]
+[ext_resource type="PackedScene" uid="uid://ccisb3ovsdokb" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-45-curve.gltf" id="16_tdxin"]
+[ext_resource type="PackedScene" uid="uid://de5omnhwfmckt" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-45-curve-skew.gltf" id="17_okeef"]
+[ext_resource type="PackedScene" uid="uid://dy1k4kaf071on" path="res://Assets/Resources/GreyBoxing/ramp_30.tscn" id="17_yf3j0"]
+[ext_resource type="PackedScene" uid="uid://wp1fme22ipv1" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-90-curve-skew.gltf" id="18_eitmo"]
+[ext_resource type="PackedScene" uid="uid://i7sf36omt13p" path="res://Assets/Resources/GreyBoxing/ramp_15.tscn" id="18_p02tk"]
+[ext_resource type="PackedScene" uid="uid://okaendvt5jhr" path="res://Assets/Resources/GreyBoxing/road_curve_45.tscn" id="19_1pija"]
+[ext_resource type="PackedScene" uid="uid://cfyqrvwelb3vp" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-90-curve.gltf" id="19_xgryu"]
+[ext_resource type="PackedScene" uid="uid://bnsp3rmesj4d0" path="res://Assets/Resources/GreyBoxing/road_curve_30.tscn" id="20_3iaxr"]
+[ext_resource type="PackedScene" uid="uid://d0hyn6lgofpwp" path="res://Assets/Resources/GreyBoxing/road-curve-15.tscn" id="20_lnjfy"]
+[ext_resource type="PackedScene" uid="uid://wt2y0idn30lt" path="res://Assets/Resources/GreyBoxing/ramp_90.tscn" id="20_tgov3"]
+[ext_resource type="PackedScene" uid="uid://brrrx120q00gy" path="res://Assets/Resources/GreyBoxing/base_road_plane.tscn" id="20_vgv4a"]
+[ext_resource type="PackedScene" uid="uid://s2f0dtp1c40v" path="res://Assets/Resources/GreyBoxing/road_curve_90.tscn" id="22_iooem"]
+[ext_resource type="PackedScene" uid="uid://cquvm38ug0x5a" path="res://Assets/Resources/GreyBoxing/ramp-45.tscn" id="23_4ow4i"]
+[ext_resource type="PackedScene" uid="uid://c656opt4gm44e" path="res://Assets/Resources/GreyBoxing/ramp_45_skew.tscn" id="26_rqokh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fn0xa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,6 +60,7 @@ uv2_world_triplanar = true
 texture_filter = 5
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0.000268881, -0.000386979, -0.000268883, 1, -3.99806e-06, 0.000386977, 4.10977e-06, 1, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -49,30 +72,197 @@ environment = SubResource("Environment_i7n0c")
 [node name="Geom" type="Node3D" parent="."]
 
 [node name="BeegFloor" type="StaticBody3D" parent="Geom"]
-transform = Transform3D(986.371, 0, 0, 0, 2, 0, 0, 0, 987.301, 0, 0, 0)
+transform = Transform3D(1202.07, -2.06468e-11, -5.96046e-08, 6.04566e-08, 2, 9.31323e-10, 0, 9.09495e-13, 1207.33, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Geom/BeegFloor"]
 shape = SubResource("BoxShape3D_0v3ql")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Geom/BeegFloor"]
+transform = Transform3D(1, -1.53451e-14, -2.91038e-11, 8.03345e-09, 1, 2.32831e-10, -2.91038e-11, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_rxvvy")
 surface_material_override/0 = SubResource("StandardMaterial3D_akxlk")
 
+[node name="pieces-showcase" type="Node3D" parent="Geom"]
+
+[node name="mod-road-camber-15" parent="Geom/pieces-showcase" instance=ExtResource("5_ifcob")]
+transform = Transform3D(1, -1.03211e-11, 0, 1.32231e-10, 1, 0, 0, 0, 1, -61.0002, 1.9836, 0.0236017)
+
+[node name="mod-road-camber-45" parent="Geom/pieces-showcase" instance=ExtResource("6_46ejf")]
+transform = Transform3D(1, -1.03213e-11, 0, 2.48646e-10, 1, 0, -8.73115e-11, 0, 1, -189, 1.94918, 0.0731349)
+
+[node name="mod-road-camber-30" parent="Geom/pieces-showcase" instance=ExtResource("7_k6gbb")]
+transform = Transform3D(1, -1.03211e-11, 0, 1.32231e-10, 1, 0, 0, 0, 1, -125, 1.96639, 0.0483682)
+
+[node name="mod-road-curve-90" parent="Geom/pieces-showcase" instance=ExtResource("8_g0gva")]
+transform = Transform3D(1, -1.03216e-11, 0, 3.06854e-10, 0.999999, 0, -2.91038e-11, 0, 1, 414, 2.11132, -0.160213)
+
+[node name="mod-road-curve-15" parent="Geom/pieces-showcase" instance=ExtResource("9_hkk55")]
+transform = Transform3D(1, -1.03213e-11, 0, 1.90439e-10, 1, 0, 0, 0, 1, 12.9997, 2.00081, -0.00116494)
+
+[node name="mod-road-curve-45" parent="Geom/pieces-showcase" instance=ExtResource("10_cx5e5")]
+transform = Transform3D(1, -1.03216e-11, 0, 3.06854e-10, 0.999999, 0, -2.91038e-11, 0, 1, 213.999, 2.05754, -1.08282)
+
+[node name="mod-road-curve-30" parent="Geom/pieces-showcase" instance=ExtResource("11_qombt")]
+transform = Transform3D(1, -1.03213e-11, 0, 1.90439e-10, 1, 0, 0, 0, 1, 113, 2.01801, -0.0259315)
+
+[node name="mod-road-curve-60" parent="Geom/pieces-showcase" instance=ExtResource("12_jfvi0")]
+transform = Transform3D(1, -1.03211e-11, 0, 1.32231e-10, 1, 0, 0, 0, 1, 314, 2.08443, -0.121515)
+
+[node name="mod-road-ramp-15-curve-skew" parent="Geom/pieces-showcase" instance=ExtResource("13_mlglp")]
+transform = Transform3D(1, -1.03219e-11, 0, 4.81477e-10, 0.999999, 4.54747e-13, -2.91038e-11, 1.36424e-12, 1, -336.134, 1.90824, -349.87)
+
+[node name="mod-road-ramp-15-curve" parent="Geom/pieces-showcase" instance=ExtResource("14_6vqi4")]
+transform = Transform3D(1, -1.03215e-11, 0, 2.48646e-10, 0.999999, 0, 0, 0, 1, -236.134, 1.92786, -349.898)
+
+[node name="mod-road-ramp-30-curve" parent="Geom/pieces-showcase" instance=ExtResource("15_6cvv4")]
+transform = Transform3D(1, -1.03216e-11, -2.91038e-11, 4.52373e-10, 0.999999, 0, 0, 1.36424e-12, 1, -136.137, 1.96198, -349.948)
+
+[node name="mod-road-ramp-45-curve" parent="Geom/pieces-showcase" instance=ExtResource("16_tdxin")]
+transform = Transform3D(1, -1.03219e-11, 0, 3.94165e-10, 0.999999, 0, -5.82077e-11, 4.54747e-13, 1, 63.8639, 2.01577, -350.025)
+
+[node name="mod-road-ramp-45-curve-skew" parent="Geom/pieces-showcase" instance=ExtResource("17_okeef")]
+transform = Transform3D(1, -1.03213e-11, 0, 1.90439e-10, 1, 0, 0, 0, 1, -51.1365, 1.98484, -349.98)
+
+[node name="mod-road-ramp-90-curve-skew" parent="Geom/pieces-showcase" instance=ExtResource("18_eitmo")]
+transform = Transform3D(1, -1.03216e-11, 0, 5.10581e-10, 0.999999, 4.54747e-13, -5.82077e-11, 1.81899e-12, 1, 163.864, 2.04266, -350.064)
+
+[node name="mod-road-ramp-90-curve" parent="Geom/pieces-showcase" instance=ExtResource("19_xgryu")]
+transform = Transform3D(1, -3.94257e-11, 0, 6.561e-10, 0.999999, 9.09495e-13, -5.82077e-11, 2.72848e-12, 1, 263.864, 2.06955, -350.102)
+
+[node name="Ramp30" parent="Geom" instance=ExtResource("17_yf3j0")]
+transform = Transform3D(1, -5.10045e-09, 2.28698e-07, 6.63715e-08, 0.965926, -0.258819, -2.47179e-07, 0.258819, 0.965927, -260.706, 9.17216, 454.484)
+
+[node name="Ramp15" parent="Geom" instance=ExtResource("18_p02tk")]
+transform = Transform3D(1, -6.40965e-08, 2.19559e-07, 6.63133e-08, 1, 8.01133e-08, -2.47179e-07, 7.64594e-08, 1, -260.703, 0.244767, 520.219)
+
+[node name="RoadCurve46" parent="Geom" instance=ExtResource("19_1pija")]
+transform = Transform3D(0.707107, -2.1953e-07, 0.707107, -0.707107, -1.23825e-07, 0.707107, -1.97935e-07, -1, -1.51602e-07, -238.076, 132.127, 584.219)
+
+[node name="Ramp90" parent="Geom/RoadCurve46/attach-point" index="0" instance=ExtResource("20_tgov3")]
+
+[node name="RoadCurve45" parent="Geom" instance=ExtResource("19_1pija")]
+transform = Transform3D(4.37116e-08, -2.1953e-07, 1, -1, -1.23824e-07, 4.42817e-08, -3.27555e-08, -1, -2.47208e-07, -174.076, 164.127, 584.219)
+
+[node name="BaseRoadPlane4" parent="Geom" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(4.37116e-08, -2.1953e-07, 1, -1, -1.23824e-07, 4.42526e-08, -3.2755e-08, -1, -2.47208e-07, -110.076, 164.127, 584.219)
+
+[node name="BaseRoadPlane3" parent="Geom" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(4.37116e-08, -2.1953e-07, 1, -1, -1.23823e-07, 4.42235e-08, -3.27545e-08, -1, -2.47208e-07, -46.0759, 164.127, 584.219)
+
+[node name="BaseRoadPlane2" parent="Geom" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(4.37116e-08, -2.1953e-07, 1, -1, -1.23823e-07, 4.41944e-08, -3.27541e-08, -1, -2.47208e-07, 17.9241, 164.127, 584.219)
+
+[node name="RoadCurve90" parent="Geom" instance=ExtResource("22_iooem")]
+transform = Transform3D(-1, -2.1953e-07, -2.35378e-12, -4.51359e-10, -1.23822e-07, -1, 2.47208e-07, -1, -3.27536e-08, 80.9241, 100.127, 584.219)
+
+[node name="Ramp45Curve2" parent="Geom" instance=ExtResource("23_4ow4i")]
+transform = Transform3D(-1, -1.5524e-07, -1.5524e-07, -4.22256e-10, 0.707106, -0.707106, 2.47208e-07, -0.707107, -0.707107, 80.9241, 31.6917, 557.811)
+
+[node name="Ramp45Curve" parent="Geom" instance=ExtResource("23_4ow4i")]
+transform = Transform3D(-1, -1.03216e-11, -2.1953e-07, -3.93152e-10, 0.999999, 1.04592e-11, 2.47208e-07, 1.36424e-12, -1, 80.9241, 1.97387, 490.747)
+
+[node name="CurveRoad18" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-0.965926, -1.03216e-11, -0.258819, -3.42425e-10, 0.999999, -8.59472e-11, 0.258819, 9.09495e-13, -0.965926, 74.6632, 1.97387, 426.167)
+
+[node name="CurveRoad17" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-0.866025, -1.03219e-11, -0.5, -3.05135e-10, 0.999999, -1.70758e-10, 0.5, 4.54747e-13, -0.866025, 51.9011, 1.97387, 365.408)
+
+[node name="CurveRoad16" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-0.707107, -1.03216e-11, -0.707107, -2.52385e-10, 0.999999, -2.31921e-10, 0.707107, 0, -0.707107, 14.189, 1.97387, 312.61)
+
+[node name="CurveRoad15" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-0.5, -1.03216e-11, -0.866025, -1.66892e-10, 0.999999, -2.46246e-10, 0.866025, 0, -0.5, -35.9031, 1.97387, 271.372)
+
+[node name="RoadCurve30" parent="Geom" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(1.31113e-07, -1.03215e-11, -1, 0, 0.999999, -2.77212e-10, 1, 0, 1.31142e-07, -99.9031, 1.97387, 250.039)
+
+[node name="Ramp31" parent="Geom" instance=ExtResource("17_yf3j0")]
+transform = Transform3D(0.520866, -0.683013, 0.512047, 0.368096, 0.720917, 0.587184, -0.770197, -0.117363, 0.626915, -184.189, 59.786, 114.954)
+
+[node name="RoadCurve32" parent="Geom" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(0.19506, -0.683013, 0.703879, 0.025188, 0.720917, 0.692565, -0.980468, -0.117363, 0.157825, -143.302, 103.573, 145.971)
+
+[node name="RoadCurve31" parent="Geom" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(-0.183013, -0.683013, 0.707107, -0.324469, 0.720917, 0.612373, -0.928023, -0.117363, -0.353554, -94.1432, 149.687, 143.142)
+
+[node name="Ramp91" parent="Geom" instance=ExtResource("20_tgov3")]
+transform = Transform3D(-0.183013, -0.707107, -0.683013, -0.324469, -0.612373, 0.720917, -0.928023, 0.353554, -0.117363, -92.6012, 235.017, 113.003)
+
+[node name="CurveRoad21" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-5.04078e-08, -0.707107, -0.707107, -0.5, -0.612373, 0.612373, -0.866026, 0.353554, -0.353554, -137.856, 279.543, 99.6134)
+
+[node name="Ramp90" parent="Geom" instance=ExtResource("20_tgov3")]
+transform = Transform3D(-5.04369e-08, 0.707107, -0.707107, -0.5, -0.612373, -0.612373, -0.866026, 0.353554, 0.353554, -228.366, 279.543, 99.6134)
+
+[node name="Ramp45Curve3" parent="Geom" instance=ExtResource("23_4ow4i")]
+transform = Transform3D(-5.0466e-08, 1, -5.82077e-11, -0.5, -2.30928e-08, -0.866026, -0.866026, -4.3714e-08, 0.5, -258.084, 221.463, 133.146)
+
+[node name="CurveRoad20" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-4.8778e-08, 1, -1.30894e-08, -0.258819, -2.31219e-08, -0.965926, -0.965926, -4.3714e-08, 0.258819, -258.084, 162.405, 160.013)
+
+[node name="CurveRoad19" parent="Geom" instance=ExtResource("20_lnjfy")]
+transform = Transform3D(-4.3714e-08, 1, -2.531e-08, 0, -2.3151e-08, -1, -1, -4.3714e-08, -9.09495e-13, -258.084, 98.4047, 170.68)
+
+[node name="Ramp45Skew2" parent="Geom" instance=ExtResource("26_rqokh")]
+transform = Transform3D(-4.3714e-08, 0.707107, 0.707107, 0, 0.707107, -0.707107, -1, -3.09083e-08, -3.09083e-08, -230.965, 30.6839, 178.36)
+
+[node name="Ramp45Skew" parent="Geom" instance=ExtResource("26_rqokh")]
+transform = Transform3D(-4.3714e-08, -1.03215e-11, 1, 0, 0.999999, 2.48467e-10, -1, 0, -4.3714e-08, -163.903, 1.97387, 186.039)
+
+[node name="Ramp45Curve4" parent="Geom" instance=ExtResource("23_4ow4i")]
+transform = Transform3D(-1, -1.03215e-11, -8.74279e-08, -2.48288e-10, 0.999999, 0, 8.74279e-08, 0, -1, -163.903, 1.97387, 250.039)
+
+[node name="RoadCurve30" parent="Geom/Ramp45Curve4" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(-0.499999, 1.06808e-11, 0.866025, -3.41061e-12, 1, -3.13776e-11, -0.866025, 0, -0.499999, -135.808, -3.57628e-07, 172.759)
+
+[node name="RoadCurve34" parent="Geom" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(0.866025, -1.03216e-11, -0.5, 2.467e-10, 0.999999, -1.52568e-10, 0.5, 0, 0.866025, -78.5701, 1.97387, 122.039)
+
+[node name="RoadCurve33" parent="Geom" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(1, -1.03215e-11, 0, 2.48646e-10, 0.999999, 0, 0, 0, 1, -99.9031, 1.97387, 186.039)
+
+[node name="BaseRoadPlane" parent="Geom" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(1, -1.03215e-11, 0, 2.19543e-10, 1, 0, 0, 0, 1, -99.9031, 1.97387, 250.039)
+
 [node name="Player" parent="." instance=ExtResource("2_4g3vq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.5604, 0)
+transform = Transform3D(1, -1.0321e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, -2.32831e-10, 16.5604, 9.99403)
 lock_rotation = true
 
 [node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("3_wo3kk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3024, 19.7734)
+transform = Transform3D(1, -1.0321e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, -9.31323e-10, 12.3024, 24.0516)
 player_node_path = NodePath("../Player")
 
 [node name="BoomHUDComponent" parent="." instance=ExtResource("4_77rds")]
 
-[node name="mod-road-ramp-90-curve" parent="." instance=ExtResource("5_m4ftw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 1, -200)
-
-[node name="mod-road-ramp-45-curve" parent="." instance=ExtResource("6_co8qr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, -200)
-
-[node name="mod-road-ramp-225-curve" parent="." instance=ExtResource("7_r80wa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 1, -200)
+[editable path="Geom/Ramp30"]
+[editable path="Geom/Ramp15"]
+[editable path="Geom/RoadCurve46"]
+[editable path="Geom/RoadCurve46/attach-point/Ramp90"]
+[editable path="Geom/RoadCurve45"]
+[editable path="Geom/BaseRoadPlane4"]
+[editable path="Geom/BaseRoadPlane3"]
+[editable path="Geom/BaseRoadPlane2"]
+[editable path="Geom/RoadCurve90"]
+[editable path="Geom/Ramp45Curve2"]
+[editable path="Geom/Ramp45Curve"]
+[editable path="Geom/CurveRoad18"]
+[editable path="Geom/CurveRoad17"]
+[editable path="Geom/CurveRoad16"]
+[editable path="Geom/CurveRoad15"]
+[editable path="Geom/RoadCurve30"]
+[editable path="Geom/Ramp31"]
+[editable path="Geom/RoadCurve32"]
+[editable path="Geom/RoadCurve31"]
+[editable path="Geom/Ramp91"]
+[editable path="Geom/CurveRoad21"]
+[editable path="Geom/Ramp90"]
+[editable path="Geom/Ramp45Curve3"]
+[editable path="Geom/CurveRoad20"]
+[editable path="Geom/CurveRoad19"]
+[editable path="Geom/Ramp45Skew2"]
+[editable path="Geom/Ramp45Skew"]
+[editable path="Geom/Ramp45Curve4"]
+[editable path="Geom/Ramp45Curve4/RoadCurve30"]
+[editable path="Geom/RoadCurve34"]
+[editable path="Geom/RoadCurve33"]
+[editable path="Geom/BaseRoadPlane"]

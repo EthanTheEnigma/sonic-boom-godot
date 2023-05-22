@@ -20,7 +20,7 @@ var top_speed_base: float = 30
 var slope_accel_multiplier: float = 0
 var slope_jump_mul: float = 1
 var jump_force_base: float = 32
-var accel: float = 200
+var accel: float = 600
 var downforce_mul: float = 0.8
 # for the love of all that is holy do not set this to 0
 var friction: float = 100
@@ -128,7 +128,7 @@ func jump(slope_mul: float) -> void:
 
 func end_jump() -> void:
 	if player_body.get_linear_velocity().y > jump_force_base / 2:
-		player_body.set_axis_velocity(Vector3.UP * jump_force_base / 2)
+		player_body.set_axis_velocity(Vector3.UP * player_body.get_linear_velocity().y * 0.75)
 
 func launch(velocity: Vector3) -> void:
 	player_body.set_axis_velocity(velocity)
