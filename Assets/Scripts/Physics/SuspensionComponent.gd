@@ -47,10 +47,10 @@ func ground_suspension() -> void:
 	suspension_model.position = position - (get_collision_normal() * (current_ride_height * 0.75) )
 	player_body.apply_central_force(ground_normal * suspension_force)
 	
-	if current_ride_height < 1:
+	if current_ride_height < 0.55:
 		player_body.set_axis_velocity(ground_normal * 1)
-	if current_ride_height > 1.5:
-		player_body.set_axis_velocity(-ground_normal * 1)
+	if current_ride_height > 1.7:
+		player_body.set_axis_velocity(-ground_normal * 2)
 
 func jump() -> void:
 	#this is just to keep the player from being stuck to the ground from the suspension

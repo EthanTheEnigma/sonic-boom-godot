@@ -72,7 +72,10 @@ func _physics_process(delta):
 			move_state_boost()
 
 func move_state_just_boosted():
-	if player_body.get_linear_velocity().length() < top_speed_boost:
+	# this introduces a very small exploit for launching higher than boost top speed
+	# but it's not significant at all, and saves checking for aerial state to solve a bug
+	# and it's a cool callback to quake movement physics, albeit not nearly as broken lol
+	if player_body.get_linear_velocity().dot(controls.wish_dir) < top_speed_boost:
 		movement_forces_component.launch(controls.wish_dir * top_speed_boost)
 	boost_manager.just_boosted()
 

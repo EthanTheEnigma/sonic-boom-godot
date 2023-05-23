@@ -6,7 +6,6 @@ class_name MovementForcesComponent
 @onready var hud_vars: HUDStatics = $"/root/HudStatics"
 @export var jump_allowed: bool = true
 @onready var player_body: RigidBody3D = $".."
-@onready var suspension_component: SuspensionComponent = $"../SuspensionComponent"
 
 # These can be modified by a MovementStateComponent, or used on their own
 var drag_coefficient: float = 0.4
@@ -166,10 +165,3 @@ func air_move() -> void:
 
 func _physics_process(delta):
 	update_global_movement_vars()
-
-
-func _on_player_body_entered(body):
-	# let's just hope that this function always gives me a physics body ¯\_(ツ)_/¯
-	var colliding_phys_body: PhysicsBody3D = body
-	var suspension_target: Vector3 = (self.global_position - (self.global_position + colliding_phys_body.global_position) ).normalized()
-	suspension_component.target_position = suspension_target

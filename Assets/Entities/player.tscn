@@ -52,7 +52,6 @@ shape = SubResource("SphereShape3D_5xidp")
 [node name="SuspensionComponent" parent="." instance=ExtResource("5_4fdww")]
 
 [node name="SuspensionModel" type="MeshInstance3D" parent="SuspensionComponent"]
-visible = false
 mesh = SubResource("SphereMesh_3aq0f")
 skeleton = NodePath("")
 
