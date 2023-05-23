@@ -70,6 +70,7 @@ shadow_enabled = true
 environment = SubResource("Environment_i7n0c")
 
 [node name="Geom" type="Node3D" parent="."]
+transform = Transform3D(1, -1.03207e-11, 0, 1.58158e-11, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="BeegFloor" type="StaticBody3D" parent="Geom"]
 transform = Transform3D(1202.07, -2.06468e-11, -5.96046e-08, 6.04566e-08, 2, 9.31323e-10, 0, 9.09495e-13, 1207.33, 0, 0, 0)
@@ -95,6 +96,108 @@ transform = Transform3D(1, -1.03211e-11, 0, 1.32231e-10, 1, 0, 0, 0, 1, -125, 1.
 
 [node name="mod-road-curve-90" parent="Geom/pieces-showcase" instance=ExtResource("8_g0gva")]
 transform = Transform3D(1, -1.03216e-11, 0, 3.06854e-10, 0.999999, 0, -2.91038e-11, 0, 1, 414, 2.11132, -0.160213)
+
+[node name="BaseRoadPlane2" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.33131e-08, 4.37108e-08, -4.35526e-08, -1, -1, 0, -4.37117e-08, 452.11, 65.1227, 220.825)
+
+[node name="BaseRoadPlane" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -1, -4.35817e-08, 4.54747e-13, 4.54747e-13, 0, 1, 452.11, 1.1227, 284.825)
+
+[node name="BaseRoadPlane3" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.32258e-08, 4.37108e-08, -4.34653e-08, -0.999999, -1, 0, -4.3713e-08, 452.11, 65.1227, 284.825)
+
+[node name="BaseRoadPlane4" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -1, -4.34944e-08, 4.54747e-13, 4.54747e-13, 0, 1, 452.11, 1.1227, 348.825)
+
+[node name="BaseRoadPlane5" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.32549e-08, 4.37108e-08, -4.34944e-08, -1, -1, 0, -4.37126e-08, 452.159, 65.1232, 348.825)
+
+[node name="BaseRoadPlane6" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -1, -4.35235e-08, 4.54747e-13, 4.54747e-13, 0, 1, 452.159, 1.12323, 412.825)
+
+[node name="BaseRoadPlane7" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31676e-08, 4.37108e-08, -4.34071e-08, -0.999999, -1, 0, -4.3714e-08, 452.159, 65.1232, 412.825)
+
+[node name="mod-road-base" parent="Geom/pieces-showcase/BaseRoadPlane7" index="0"]
+transform = Transform3D(1, 0, 4.54747e-13, 0, 1, 2.25026e-11, 0, -3.63432e-12, 1, 0, 0, 0)
+
+[node name="BaseRoadPlane8" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.34362e-08, 4.54747e-13, 0, 0, 1, 452.159, 1.12323, 476.825)
+
+[node name="BaseRoadPlane9" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31967e-08, 4.37108e-08, -4.34362e-08, -0.999999, -1, 0, -4.37135e-08, 452.06, 65.1221, 92.825)
+
+[node name="BaseRoadPlane10" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.34653e-08, 4.54747e-13, 4.54747e-13, 0, 1, 452.06, 1.12218, 156.825)
+
+[node name="BaseRoadPlane11" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31094e-08, 4.37108e-08, -4.33489e-08, -0.999999, -1, 0, -4.37149e-08, 452.06, 65.1221, 156.825)
+
+[node name="BaseRoadPlane12" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.3378e-08, 4.54747e-13, -9.09495e-13, 0, 1, 452.06, 1.12218, 220.825)
+
+[node name="BaseRoadPlane13" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31385e-08, 4.37108e-08, -4.3378e-08, -0.999999, -1, 0, -4.37144e-08, 452.209, 65.1237, 476.825)
+
+[node name="BaseRoadPlane14" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.34071e-08, 4.54747e-13, -4.54747e-13, 0, 1, 452.209, 1.12375, 540.825)
+
+[node name="BaseRoadPlane15" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.30512e-08, 4.37108e-08, -4.32907e-08, -0.999999, -1, 0, -4.37153e-08, 452.209, 65.1237, 540.825)
+
+[node name="BaseRoadPlane16" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.33198e-08, 4.54747e-13, -1.81899e-12, 0, 1, 452.209, 1.12375, 604.825)
+
+[node name="BaseRoadPlane17" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.32549e-08, 4.37108e-08, -4.34944e-08, -1, -1, 0, -4.37126e-08, 452.075, 193.123, 220.825)
+
+[node name="BaseRoadPlane18" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -1, -4.35235e-08, 4.54747e-13, 4.54747e-13, 0, 1, 452.075, 129.123, 284.825)
+
+[node name="BaseRoadPlane19" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31676e-08, 4.37108e-08, -4.34071e-08, -0.999999, -1, 0, -4.3714e-08, 452.075, 193.123, 284.825)
+
+[node name="BaseRoadPlane20" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.34362e-08, 4.54747e-13, 0, 0, 1, 452.075, 129.123, 348.825)
+
+[node name="BaseRoadPlane21" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31967e-08, 4.37108e-08, -4.34362e-08, -0.999999, -1, 0, -4.37135e-08, 452.125, 193.123, 348.825)
+
+[node name="BaseRoadPlane22" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.34653e-08, 4.54747e-13, 4.54747e-13, 0, 1, 452.125, 129.123, 412.825)
+
+[node name="BaseRoadPlane23" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31094e-08, 4.37108e-08, -4.33489e-08, -0.999999, -1, 0, -4.37149e-08, 452.125, 193.123, 412.825)
+
+[node name="mod-road-base" parent="Geom/pieces-showcase/BaseRoadPlane23" index="0"]
+transform = Transform3D(1, 0, 4.54747e-13, 0, 1, 2.25026e-11, 0, -3.63432e-12, 1, 0, 0, 0)
+
+[node name="BaseRoadPlane24" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.3378e-08, 4.54747e-13, -9.09495e-13, 0, 1, 452.125, 129.123, 476.825)
+
+[node name="BaseRoadPlane25" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.31385e-08, 4.37108e-08, -4.3378e-08, -0.999999, -1, 0, -4.37144e-08, 452.026, 193.122, 92.8245)
+
+[node name="BaseRoadPlane26" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.34071e-08, 4.54747e-13, -4.54747e-13, 0, 1, 452.026, 129.122, 156.825)
+
+[node name="BaseRoadPlane27" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.30512e-08, 4.37108e-08, -4.32907e-08, -0.999999, -1, 0, -4.37153e-08, 452.026, 193.122, 156.825)
+
+[node name="BaseRoadPlane28" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.33198e-08, 4.54747e-13, -1.81899e-12, 0, 1, 452.026, 129.122, 220.825)
+
+[node name="BaseRoadPlane29" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.30803e-08, 4.37108e-08, -4.33198e-08, -0.999999, -1, 0, -4.37153e-08, 452.174, 193.124, 476.825)
+
+[node name="BaseRoadPlane30" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.33489e-08, 4.54747e-13, -1.36424e-12, 0, 1, 452.174, 129.124, 540.825)
+
+[node name="BaseRoadPlane31" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(0, 1, -4.2993e-08, 4.37108e-08, -4.32325e-08, -0.999999, -1, 0, -4.37158e-08, 452.174, 193.124, 540.825)
+
+[node name="BaseRoadPlane32" parent="Geom/pieces-showcase" instance=ExtResource("20_vgv4a")]
+transform = Transform3D(-4.34417e-08, 1, 0, -0.999999, -4.32616e-08, 4.54747e-13, -2.27374e-12, 0, 1, 452.174, 129.124, 604.825)
 
 [node name="mod-road-curve-15" parent="Geom/pieces-showcase" instance=ExtResource("9_hkk55")]
 transform = Transform3D(1, -1.03213e-11, 0, 1.90439e-10, 1, 0, 0, 0, 1, 12.9997, 2.00081, -0.00116494)
@@ -209,11 +312,11 @@ transform = Transform3D(-4.3714e-08, 0.707107, 0.707107, 0, 0.707107, -0.707107,
 [node name="Ramp45Skew" parent="Geom" instance=ExtResource("26_rqokh")]
 transform = Transform3D(-4.3714e-08, -1.03215e-11, 1, 0, 0.999999, 2.48467e-10, -1, 0, -4.3714e-08, -163.903, 1.97387, 186.039)
 
+[node name="RoadCurve35" parent="Geom" instance=ExtResource("20_3iaxr")]
+transform = Transform3D(0.499999, -1.03223e-11, -0.866025, 1.3938e-10, 0.999999, -2.658e-10, 0.866025, 4.54747e-13, 0.499999, -28.095, 1.97387, 77.28)
+
 [node name="Ramp45Curve4" parent="Geom" instance=ExtResource("23_4ow4i")]
 transform = Transform3D(-1, -1.03215e-11, -8.74279e-08, -2.48288e-10, 0.999999, 0, 8.74279e-08, 0, -1, -163.903, 1.97387, 250.039)
-
-[node name="RoadCurve30" parent="Geom/Ramp45Curve4" instance=ExtResource("20_3iaxr")]
-transform = Transform3D(-0.499999, 1.06808e-11, 0.866025, -3.41061e-12, 1, -3.13776e-11, -0.866025, 0, -0.499999, -135.808, -3.57628e-07, 172.759)
 
 [node name="RoadCurve34" parent="Geom" instance=ExtResource("20_3iaxr")]
 transform = Transform3D(0.866025, -1.03216e-11, -0.5, 2.467e-10, 0.999999, -1.52568e-10, 0.5, 0, 0.866025, -78.5701, 1.97387, 122.039)
@@ -224,8 +327,17 @@ transform = Transform3D(1, -1.03215e-11, 0, 2.48646e-10, 0.999999, 0, 0, 0, 1, -
 [node name="BaseRoadPlane" parent="Geom" instance=ExtResource("20_vgv4a")]
 transform = Transform3D(1, -1.03215e-11, 0, 2.19543e-10, 1, 0, 0, 0, 1, -99.9031, 1.97387, 250.039)
 
+[node name="Ramp45Curve5" parent="Geom" instance=ExtResource("23_4ow4i")]
+transform = Transform3D(1, -1.03207e-11, 0, 1.58158e-11, 1, 0, 0, 0, 1, 264.116, 1.07222, 300.898)
+
+[node name="mod-road-ramp-45-curve" parent="Geom/Ramp45Curve5" index="0"]
+transform = Transform3D(2.82307e-08, -0.000272881, -1, -0.000264885, 1, -0.000272881, 1, 0.000264885, -4.36557e-08, -73.9779, -0.0196638, 57.0287)
+
+[node name="Ramp92" parent="Geom" instance=ExtResource("20_tgov3")]
+transform = Transform3D(2.84635e-08, -0.000272881, -1, -0.000264885, 1, -0.000272881, 1, 0.000264885, -4.36557e-08, 386.193, 1.10584, 499.851)
+
 [node name="Player" parent="." instance=ExtResource("2_4g3vq")]
-transform = Transform3D(1, -1.0321e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, -2.32831e-10, 16.5604, 9.99403)
+transform = Transform3D(1, -1.03211e-11, 0, 1.61335e-10, 1, 0, 0, 0, 1, 326.181, 17.0896, 467.874)
 lock_rotation = true
 
 [node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("3_wo3kk")]
@@ -234,6 +346,38 @@ player_node_path = NodePath("../Player")
 
 [node name="BoomHUDComponent" parent="." instance=ExtResource("4_77rds")]
 
+[editable path="Geom/pieces-showcase/BaseRoadPlane2"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane3"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane4"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane5"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane6"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane7"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane8"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane9"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane10"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane11"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane12"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane13"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane14"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane15"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane16"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane17"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane18"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane19"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane20"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane21"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane22"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane23"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane24"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane25"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane26"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane27"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane28"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane29"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane30"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane31"]
+[editable path="Geom/pieces-showcase/BaseRoadPlane32"]
 [editable path="Geom/Ramp30"]
 [editable path="Geom/Ramp15"]
 [editable path="Geom/RoadCurve46"]
@@ -261,8 +405,10 @@ player_node_path = NodePath("../Player")
 [editable path="Geom/CurveRoad19"]
 [editable path="Geom/Ramp45Skew2"]
 [editable path="Geom/Ramp45Skew"]
+[editable path="Geom/RoadCurve35"]
 [editable path="Geom/Ramp45Curve4"]
-[editable path="Geom/Ramp45Curve4/RoadCurve30"]
 [editable path="Geom/RoadCurve34"]
 [editable path="Geom/RoadCurve33"]
 [editable path="Geom/BaseRoadPlane"]
+[editable path="Geom/Ramp45Curve5"]
+[editable path="Geom/Ramp92"]

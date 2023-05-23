@@ -5,10 +5,8 @@ class_name MovementForcesComponent
 @onready var spatial_vars: SpatialVarStatics = $"/root/SpatialVarStatics"
 @onready var hud_vars: HUDStatics = $"/root/HudStatics"
 @export var jump_allowed: bool = true
-##@export var player_body_path: RigidBody3D
-#@export var accel_curve_path: Curve
 @onready var player_body: RigidBody3D = $".."
-#@onready var accel_curve: Curve = accel_curve_path
+@onready var suspension_component: SuspensionComponent = $"../SuspensionComponent"
 
 # These can be modified by a MovementStateComponent, or used on their own
 var drag_coefficient: float = 0.4
@@ -20,7 +18,7 @@ var top_speed_base: float = 30
 var slope_accel_multiplier: float = 0
 var slope_jump_mul: float = 1
 var jump_force_base: float = 32
-var accel: float = 600
+var accel: float = 300
 var downforce_mul: float = 0.8
 # for the love of all that is holy do not set this to 0
 var friction: float = 100
@@ -127,8 +125,9 @@ func jump(slope_mul: float) -> void:
 	player_body.set_axis_velocity(spatial_vars.ground_normal * jump_force)
 
 func end_jump() -> void:
-	if player_body.get_linear_velocity().y > jump_force_base / 2:
-		player_body.set_axis_velocity(Vector3.UP * player_body.get_linear_velocity().y * 0.75)
+	pass
+	#if player_body.get_linear_velocity().y > jump_force_base / 2:
+		#player_body.set_axis_velocity(Vector3.UP * player_body.get_linear_velocity().y * 0.75)
 
 func launch(velocity: Vector3) -> void:
 	player_body.set_axis_velocity(velocity)
@@ -167,3 +166,10 @@ func air_move() -> void:
 
 func _physics_process(delta):
 	update_global_movement_vars()
+
+
+func _on_player_body_entered(body):
+	# let's just hope that this function always gives me a physics body ¯\_(ツ)_/¯
+	var colliding_phys_body: PhysicsBody3D = body
+	var suspension_target: Vector3 = (self.global_position - (self.global_position + colliding_phys_body.global_position) ).normalized()
+	suspension_component.target_position = suspension_target

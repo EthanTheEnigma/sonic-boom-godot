@@ -2,13 +2,13 @@ extends "res://Assets/Scripts/Physics/MovementStateComponent.gd"
 class_name BoomMovementStateComponent
 
 @export var can_buffer_jump: bool = true
-@export var top_speed: float = 30
-@export var top_speed_boost: float = 50
-@export var accel: float = 130
-@export var accel_rolling: float = 50
-@export var accel_boost: float = 300
+@export var top_speed: float = 50
+@export var top_speed_boost: float = 75
+@export var accel: float = 300
+@export var accel_rolling: float = 75
+@export var accel_boost: float = 600
 @export var base_jump_force: float = 16
-@export var boost_speed: float = 50
+@export var boost_speed: float = 75
 @export var drag_coefficient: float = 0.4
 @export var drag_coefficient_rolling: float = 0.25
 @export var drag_coefficient_boosting: float = 0.2

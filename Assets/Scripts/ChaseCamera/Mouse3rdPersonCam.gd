@@ -5,23 +5,21 @@ class_name Mouse3rdPersonCam
 @export var springarm_path: SpringArm3D
 
 @onready var player_node: Node3D = player_node_path
-@onready var springarm: SpringArm3D = springarm_path
+@onready var springarm: SpringArm3D = $"SpringArm3D"
 
 @onready var controls: GameControls = $"/root/GameControls"
 @onready var alignment_funcs: AlignmentStatics = $"/root/AlignmentStatics"
 @onready var spatial_vars: SpatialVarStatics = $"/root/SpatialVarStatics"
+
+var up_axis: Vector3 = Vector3.UP
+var right_axis: Vector3 = Vector3.RIGHT
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func cam_input():
-	#var cam_input = Input.get_vector("camera_left", "camera_right", "camera_up", "camera_down")
-	
-	if controls.wish_dir_basis.y.y < 0:
-		self.rotation.y += controls.cam_input.x * 0.1
-	else:
-		self.rotation.y -= controls.cam_input.x * 0.1
+	self.transform.basis = self.transform.basis.rotated(up_axis, -controls.cam_input.x * 0.1)
 	springarm.rotation.x -= controls.cam_input.y * 0.1
 	springarm.rotation.x = clamp(springarm.rotation.x, deg_to_rad(-80), deg_to_rad(60))
 
@@ -32,16 +30,14 @@ func _input(event: InputEvent) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
-			if controls.wish_dir_basis.y.y < 0:
-				self.rotate_y(event.relative.x * 0.001)
-			else:
-				self.rotate_y(-event.relative.x * 0.001)
-			
-			springarm.rotate_x(-event.relative.y * 0.001)
+			self.transform.basis = self.transform.basis.rotated(up_axis, -event.relative.x * 0.001)
 			springarm.rotation.x = clamp(springarm.rotation.x, deg_to_rad(-80), deg_to_rad(60))
+			springarm.rotate_x(-event.relative.y * 0.001)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	up_axis = self.transform.basis.y
+	right_axis = self.transform.basis.x
 	position = player_node.position
 	position = position + transform.basis.y * 3
 	var alignment = alignment_funcs.basis_aligned_y(transform.basis, controls.ground_normal)

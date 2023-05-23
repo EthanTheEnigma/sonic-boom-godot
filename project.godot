@@ -89,7 +89,7 @@ roll={
 
 [physics]
 
-3d/default_gravity=25.0
+3d/default_gravity=32.0
 
 [rendering]
 

@@ -9,9 +9,11 @@
 [ext_resource type="AudioStream" uid="uid://cpp4egpd032n1" path="res://Assets/Sounds/sonic_boost_session.wav" id="7_d2uk4"]
 [ext_resource type="AudioStream" uid="uid://1ai65nai14aj" path="res://Assets/Sounds/wind-sound.wav" id="8_3yax7"]
 [ext_resource type="AudioStream" uid="uid://cd58oqk7yetc3" path="res://Assets/Sounds/sonic-roll.wav" id="9_v77wf"]
-[ext_resource type="Script" path="res://Assets/Scripts/Player/BoomVelocityClipCast.gd" id="10_qdwok"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player/VelocityArrow.gd" id="11_yveot"]
 [ext_resource type="Script" path="res://Assets/Scripts/Player/WishDirArrow.gd" id="12_hu33n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovoo0"]
+friction = 0.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5xidp"]
 
@@ -29,6 +31,7 @@ albedo_color = Color(1, 0, 0, 1)
 
 [node name="Player" type="RigidBody3D"]
 mass = 25.0
+physics_material_override = SubResource("PhysicsMaterial_ovoo0")
 continuous_cd = true
 max_contacts_reported = 12
 contact_monitor = true
@@ -49,6 +52,7 @@ shape = SubResource("SphereShape3D_5xidp")
 [node name="SuspensionComponent" parent="." instance=ExtResource("5_4fdww")]
 
 [node name="SuspensionModel" type="MeshInstance3D" parent="SuspensionComponent"]
+visible = false
 mesh = SubResource("SphereMesh_3aq0f")
 skeleton = NodePath("")
 
@@ -68,10 +72,6 @@ stream = ExtResource("8_3yax7")
 stream = ExtResource("9_v77wf")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
-
-[node name="BoomVelocityClipCast" type="RayCast3D" parent="."]
-target_position = Vector3(0, 0, -1)
-script = ExtResource("10_qdwok")
 
 [node name="VelocityArrowContainer" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -93,4 +93,5 @@ mesh = SubResource("BoxMesh_f2ryp")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q07k5")
 
+[connection signal="body_entered" from="." to="MovementForcesComponent" method="_on_player_body_entered"]
 [connection signal="move_state_changed" from="BoomMovementStateComponent" to="BoomSoundManager" method="_on_boom_movement_state_component_move_state_changed"]
