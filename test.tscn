@@ -1,6 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://bvd02ne43g7x0"]
+[gd_scene load_steps=40 format=3 uid="uid://bvd02ne43g7x0"]
 
-[ext_resource type="Texture2D" uid="uid://djdcjn2740a3s" path="res://Debug-Textures/Dark/texture_01.png" id="1_khnoy"]
+[ext_resource type="Texture2D" uid="uid://djdcjn2740a3s" path="res://Assets/Debug-Textures/Dark/texture_01.png" id="1_hwbog"]
 [ext_resource type="PackedScene" uid="uid://bgvu60lqu4l8r" path="res://Assets/Entities/player.tscn" id="2_4g3vq"]
 [ext_resource type="PackedScene" uid="uid://bie62tdmtt5an" path="res://Assets/Entities/mouse_3_rd_person_cam.tscn" id="3_wo3kk"]
 [ext_resource type="PackedScene" uid="uid://0f3iirwwlyxq" path="res://Assets/Components/boom_hud_component.tscn" id="4_77rds"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://s2f0dtp1c40v" path="res://Assets/Resources/GreyBoxing/road_curve_90.tscn" id="22_iooem"]
 [ext_resource type="PackedScene" uid="uid://cquvm38ug0x5a" path="res://Assets/Resources/GreyBoxing/ramp-45.tscn" id="23_4ow4i"]
 [ext_resource type="PackedScene" uid="uid://c656opt4gm44e" path="res://Assets/Resources/GreyBoxing/ramp_45_skew.tscn" id="26_rqokh"]
+[ext_resource type="Texture2D" uid="uid://elj6aiy10176" path="res://Assets/Debug-Textures/Orange/texture_02.png" id="27_ske4o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fn0xa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,7 +49,7 @@ glow_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_rxvvy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akxlk"]
-albedo_texture = ExtResource("1_khnoy")
+albedo_texture = ExtResource("1_hwbog")
 anisotropy = 1.0
 uv1_scale = Vector3(0.01, 0.01, 0.01)
 uv1_triplanar = true
@@ -58,6 +59,26 @@ uv2_triplanar = true
 uv2_triplanar_sharpness = 2.0
 uv2_world_triplanar = true
 texture_filter = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iyxde"]
+albedo_texture = ExtResource("1_hwbog")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+
+[sub_resource type="Curve3D" id="Curve3D_y2mn3"]
+_data = {
+"points": PackedVector3Array(-134.811, -0.0360718, -16.7897, 134.811, 0.0360718, 16.7897, 233.672, 0.0664062, 8.04675, -65.5803, -0.0174561, 48.2778, 65.5803, 0.0174561, -48.2778, 615.437, 0.167969, 38.2657, -25.938, -0.00665283, 76.8385, 25.938, 0.00665283, -76.8385, 777.319, 0.211975, -154.12, 7.29407, 0.00231934, 86.5501, -7.29407, -0.00231934, -86.5501, 816.2, 0.220764, -573.485, -47.1745, -0.0124512, 58.0848, 47.1745, 0.0124512, -58.0848, 873.291, -81.4163, -1030.8, -91.3024, -37.0157, 29.5605, 91.3024, 37.0157, -29.5605, 1103.86, -92.858, -1148.18, -70.4652, -64.7601, -1.81543, 70.4652, 64.7601, 1.81543, 1376.18, 289.311, -1289.97, -30.1104, -23.4064, -41.2606, 30.1104, 23.4064, 41.2606, 1481.22, 425.137, -1174.42, -41.4121, -0.012085, -178.76, 41.4121, 0.012085, 178.76, 1951.21, 629.328, -752.131, 192.162, 56.63, -25.9254, -192.162, -56.63, 25.9254, 1511.91, 739.879, -142.901, 77, 92, 20, -77, -92, -20, 1067.23, 77.387, -502.454, 63.4033, 38.5569, 79.8754, -63.4033, -38.5569, -79.8754, 906.914, -340.002, -651.719, 24.624, -8.93121, 107.278, -24.624, 8.93121, -107.278, 792.049, -318.658, -981.837, 66.7435, 0.0182495, 96.5031, -66.7435, -0.0182495, -96.5031, 686.896, -331.816, -1471.25, 125.888, 0.033783, 8.58923, -125.888, -0.033783, -8.58923, 257.606, -270.827, -1808.48, 100.589, 0.0267334, -48.8904, -100.589, -0.0267334, 48.8904, -345.415, -525.408, -1766.54, 170.051, -97.9402, -33.1953, -170.051, 97.9402, 33.1953, -772.616, -451.734, -1467.52, 205.247, -172.616, -42.205, -205.247, 172.616, 42.205, -1062.76, -0.287659, -1354.97, 95.0944, 9.31879, -57.9254, -95.0944, -9.31879, 57.9254, -1682.84, -0.453796, -1217.47, -74.3502, -0.020752, -200.925, 74.3502, 0.020752, 200.925, -2059.32, -0.552368, -555.303, -131.664, -0.0360107, -142.997, 131.664, 0.0360107, 142.997, -1687.12, -0.451172, -266.051, -84.307, -0.0230713, -95.4564, 84.307, 0.0230713, 95.4564, -1488.08, -0.395874, 181.039, -84.8053, -48.7969, -58.8225, 84.8053, 48.7969, 58.8225, -1144.01, -0.302307, 440.536, -208.07, -0.055542, 33.0278, 208.07, 0.055542, -33.0278, -722.278, 285.427, 600.287, -48.6989, 25.6968, 68.7329, 48.6989, -25.6968, -68.7329, -315.431, 187.382, 302.236, -76.0476, -0.0200806, 57.9087, 76.0476, 0.0200806, -57.9087, -191.666, -0.0480957, -36.0966, -177.748, -0.0478516, -9.54846, 177.748, 0.0478516, 9.54846, 233.672, 0.0664062, 8.04675),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 27
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi2hu"]
+albedo_texture = ExtResource("27_ske4o")
+uv1_scale = Vector3(0.125, 0.125, 0.125)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_triplanar = true
+uv2_world_triplanar = true
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0.000268881, -0.000386979, -0.000268883, 1, -3.99806e-06, 0.000386977, 4.10977e-06, 1, 0, 0, 0)
@@ -347,8 +368,37 @@ transform = Transform3D(2.84635e-08, -0.000272881, -1, -0.000264885, 1, -0.00027
 [node name="Ramp93" parent="Geom" instance=ExtResource("20_tgov3")]
 transform = Transform3D(2.84635e-08, -0.000272881, -1, -0.000264885, 1, -0.000272881, 1, 0.000264885, -4.34811e-08, 386.06, 1.10443, 156.851)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Geom"]
+transform = Transform3D(1, -1.0321e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, 0.0282327, -105, 0.0004206)
+use_collision = true
+size = Vector3(5000, 5, 5000)
+material = SubResource("StandardMaterial3D_iyxde")
+
+[node name="CSGGeom" type="Node3D" parent="."]
+transform = Transform3D(1, -1.03207e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Path3D" type="Path3D" parent="CSGGeom"]
+transform = Transform3D(1, -1.0321e-11, -2.03727e-10, 2.48646e-10, 1, 0, 0, 0, 1, 0.180088, 555.003, 850.998)
+curve = SubResource("Curve3D_y2mn3")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGGeom"]
+transform = Transform3D(1, -1.0321e-11, -8.73115e-11, 7.40237e-11, 1, 0, 0, 0, 1, 0, 0, 0)
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 65, 1, 65, 0)
+mode = 2
+path_node = NodePath("../Path3D")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+material = SubResource("StandardMaterial3D_oi2hu")
+
 [node name="Player" parent="." instance=ExtResource("2_4g3vq")]
-transform = Transform3D(1, -1.03211e-11, 0, 1.61335e-10, 1, 0, 0, 0, 1, 326.181, 17.0896, 467.874)
+transform = Transform3D(1, -1.03213e-11, -8.73115e-11, 2.77751e-10, 1, 1.36424e-12, 8.73115e-11, -1.36424e-12, 1, 0.161804, 623.003, 850.998)
 lock_rotation = true
 
 [node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("3_wo3kk")]

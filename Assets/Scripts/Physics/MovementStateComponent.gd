@@ -65,6 +65,7 @@ func state_ground():
 		has_jumped = false
 	movement_forces_component.traction_base = traction_base
 	movement_forces_component.ground_move()
+	suspension_component.suspension_length = 4
 
 func state_air():
 	if can_coyote_jump == false:
@@ -72,6 +73,7 @@ func state_air():
 	movement_forces_component.air_move()
 	if has_jumped and not controls.is_jump_pressed:
 		movement_forces_component.end_jump()
+	suspension_component.suspension_length = 2
 
 func jump():
 	jump_available = false
