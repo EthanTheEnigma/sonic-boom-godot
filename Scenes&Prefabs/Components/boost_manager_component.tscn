@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crcb36tldqy6a"]
+
+[ext_resource type="Script" path="res://Scripts/Player/BoostManager.gd" id="1_wscll"]
+
+[node name="BoostManagerComponent" type="Node3D"]
+script = ExtResource("1_wscll")

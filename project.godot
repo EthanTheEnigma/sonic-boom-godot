@@ -17,10 +17,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AlignmentStatics="*res://Assets/Scripts/Utility/AlignmentStatics.gd"
-SpatialVarStatics="*res://Assets/Scripts/Player/SpatialVarStatics.gd"
-GameControls="*res://Assets/Scripts/Player/Controls.gd"
-HudStatics="*res://Assets/Scripts/HUD/HUDStatics.gd"
+AlignmentStatics="*res://Scripts/Utility/AlignmentStatics.gd"
+SpatialVarStatics="*res://Scripts/Player/SpatialVarStatics.gd"
+GameControls="*res://Scripts/Player/Controls.gd"
+HudStatics="*res://Scripts/HUD/HUDStatics.gd"
 
 [input]
 

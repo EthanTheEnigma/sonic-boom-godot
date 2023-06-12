@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bid7riqwj65nj"]
+
+[ext_resource type="PackedScene" uid="uid://dpbys63mcem8u" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-curve-60.gltf" id="1_atn6s"]
+[ext_resource type="Script" path="res://Scenes&Prefabs/Resources/GreyBoxing/tool-grey-box.gd" id="1_hnnel"]
+
+[node name="RoadCurve60" type="Node3D"]
+script = ExtResource("1_hnnel")
+
+[node name="mod-road-curve-60" parent="." instance=ExtResource("1_atn6s")]
+
+[node name="attach-point" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 42.667, 0, -64)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cquvm38ug0x5a"]
+
+[ext_resource type="Script" path="res://Scenes&Prefabs/Resources/GreyBoxing/tool-grey-box.gd" id="1_bygl2"]
+[ext_resource type="PackedScene" uid="uid://ccisb3ovsdokb" path="res://Assets/Meshes/grey-box-meshes/surfaces/mod-road-ramp-45-curve.gltf" id="1_essqs"]
+
+[node name="Ramp45Curve" type="Node3D"]
+script = ExtResource("1_bygl2")
+
+[node name="mod-road-ramp-45-curve" parent="." instance=ExtResource("1_essqs")]
+
+[node name="attach-point" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 29.7179, -67.0643)

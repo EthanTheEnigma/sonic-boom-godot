@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bie62tdmtt5an"]
+
+[ext_resource type="Script" path="res://Scripts/ChaseCamera/Mouse3rdPersonCam.gd" id="1_oenir"]
+
+[node name="Mouse3rdPersonCam" type="Node3D" node_paths=PackedStringArray("springarm_path")]
+script = ExtResource("1_oenir")
+springarm_path = NodePath("SpringArm3D")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+spring_length = 6.0
+margin = 0.05
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+fov = 110.0

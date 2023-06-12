@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxsyt8wh11csk"]
-
-[ext_resource type="Script" path="res://Assets/Scripts/Player/BoomMovementStateComponent.gd" id="1_ivob7"]
-
-[node name="BoomMovementStateComponent" type="Node3D"]
-script = ExtResource("1_ivob7")
