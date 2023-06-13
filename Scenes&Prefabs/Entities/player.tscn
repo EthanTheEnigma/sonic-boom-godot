@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bgvu60lqu4l8r"]
+[gd_scene load_steps=22 format=3 uid="uid://bgvu60lqu4l8r"]
 
 [ext_resource type="Script" path="res://Scripts/Player/BoomCharacterController.gd" id="1_a7t74"]
 [ext_resource type="PackedScene" uid="uid://bxsyt8wh11csk" path="res://Scenes&Prefabs/Components/boom_movement_state_component.tscn" id="2_expo6"]
@@ -11,6 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://cd58oqk7yetc3" path="res://Assets/Sounds/sonic-roll.wav" id="9_kqtxo"]
 [ext_resource type="Script" path="res://Scripts/Player/VelocityArrow.gd" id="10_6bfdm"]
 [ext_resource type="Script" path="res://Scripts/Player/WishDirArrow.gd" id="11_fy32e"]
+[ext_resource type="Script" path="res://Scripts/Player/RingsManager.gd" id="12_17rl5"]
+[ext_resource type="Script" path="res://Scripts/Player/SonicHurtbox.gd" id="12_w0mht"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovoo0"]
 friction = 0.0
@@ -28,6 +30,9 @@ albedo_color = Color(0, 0, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q07k5"]
 albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2fmjt"]
+radius = 0.612182
 
 [node name="Player" type="RigidBody3D"]
 mass = 25.0
@@ -91,6 +96,18 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 1.25, 0, 0, -0.5)
 mesh = SubResource("BoxMesh_f2ryp")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_q07k5")
+
+[node name="SonicHurtbox" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("12_w0mht")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SonicHurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("CapsuleShape3D_2fmjt")
+
+[node name="RingsManager" type="Node3D" parent="."]
+script = ExtResource("12_17rl5")
 
 [connection signal="body_entered" from="." to="MovementForcesComponent" method="_on_player_body_entered"]
 [connection signal="move_state_changed" from="BoomMovementStateComponent" to="BoomSoundManager" method="_on_boom_movement_state_component_move_state_changed"]
