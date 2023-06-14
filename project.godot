@@ -21,6 +21,7 @@ AlignmentStatics="*res://Scripts/Utility/AlignmentStatics.gd"
 SpatialVarStatics="*res://Scripts/Player/SpatialVarStatics.gd"
 GameControls="*res://Scripts/Player/Controls.gd"
 HudStatics="*res://Scripts/HUD/HUDStatics.gd"
+CombatEventBus="*res://Scripts/Utility/CombatEventBus.gd"
 
 [input]
 

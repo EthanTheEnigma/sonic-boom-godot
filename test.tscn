@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bvd02ne43g7x0"]
+[gd_scene load_steps=41 format=3 uid="uid://bvd02ne43g7x0"]
 
 [ext_resource type="Texture2D" uid="uid://djdcjn2740a3s" path="res://Assets/Debug-Textures/Dark/texture_01.png" id="1_hwbog"]
 [ext_resource type="PackedScene" uid="uid://bgvu60lqu4l8r" path="res://Scenes&Prefabs/Entities/player.tscn" id="2_4g3vq"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://cquvm38ug0x5a" path="res://Scenes&Prefabs/Resources/GreyBoxing/ramp-45.tscn" id="23_4ow4i"]
 [ext_resource type="PackedScene" uid="uid://c656opt4gm44e" path="res://Scenes&Prefabs/Resources/GreyBoxing/ramp_45_skew.tscn" id="26_rqokh"]
 [ext_resource type="Texture2D" uid="uid://elj6aiy10176" path="res://Assets/Debug-Textures/Orange/texture_02.png" id="27_ske4o"]
+[ext_resource type="PackedScene" uid="uid://dfb73r4sgmd8m" path="res://Scenes&Prefabs/Components/hitbox_test.tscn" id="31_f10sy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fn0xa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -398,7 +399,7 @@ path_joined = false
 material = SubResource("StandardMaterial3D_oi2hu")
 
 [node name="Player" parent="." instance=ExtResource("2_4g3vq")]
-transform = Transform3D(1, -1.03213e-11, -8.73115e-11, 2.77751e-10, 1, 1.36424e-12, 8.73115e-11, -1.36424e-12, 1, 0.161804, 623.003, 850.998)
+transform = Transform3D(1, -1.0322e-11, -8.73115e-11, 5.10581e-10, 1, 1.36424e-12, 8.73115e-11, -1.36424e-12, 1, -103.954, 22.9726, 134.04)
 lock_rotation = true
 
 [node name="Mouse3rdPersonCam" parent="." node_paths=PackedStringArray("player_node_path") instance=ExtResource("3_wo3kk")]
@@ -406,6 +407,9 @@ transform = Transform3D(1, -1.0321e-11, 0, 4.49196e-11, 1, 0, 0, 0, 1, -9.31323e
 player_node_path = NodePath("../Player")
 
 [node name="BoomHUDComponent" parent="." instance=ExtResource("4_77rds")]
+
+[node name="HitboxTest" parent="." instance=ExtResource("31_f10sy")]
+transform = Transform3D(1, -1.03215e-11, 0, 2.48646e-10, 0.999999, 0, 0, 0, 1, -129.261, 18.4911, 213.393)
 
 [editable path="Geom/pieces-showcase/Beeg Wall/BaseRoadPlane2"]
 [editable path="Geom/pieces-showcase/Beeg Wall/BaseRoadPlane"]
