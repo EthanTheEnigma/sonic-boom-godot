@@ -10,7 +10,12 @@ func _ready():
 	pass # Replace with function body.
 
 func deduct_rings():
-	pass
+	print("expel rings")
+	rings_manager.expel_rings()
+
+func add_rings():
+	print("add ring")
+	rings_manager.increment_rings()
 
 func launch_player_hit(launch_direction: Vector3):
 	print("launching player")

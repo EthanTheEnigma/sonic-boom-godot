@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bvd02ne43g7x0"]
+[gd_scene load_steps=42 format=3 uid="uid://bvd02ne43g7x0"]
 
 [ext_resource type="Texture2D" uid="uid://djdcjn2740a3s" path="res://Assets/Debug-Textures/Dark/texture_01.png" id="1_hwbog"]
 [ext_resource type="PackedScene" uid="uid://bgvu60lqu4l8r" path="res://Scenes&Prefabs/Entities/player.tscn" id="2_4g3vq"]
@@ -30,7 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://cquvm38ug0x5a" path="res://Scenes&Prefabs/Resources/GreyBoxing/ramp-45.tscn" id="23_4ow4i"]
 [ext_resource type="PackedScene" uid="uid://c656opt4gm44e" path="res://Scenes&Prefabs/Resources/GreyBoxing/ramp_45_skew.tscn" id="26_rqokh"]
 [ext_resource type="Texture2D" uid="uid://elj6aiy10176" path="res://Assets/Debug-Textures/Orange/texture_02.png" id="27_ske4o"]
-[ext_resource type="PackedScene" uid="uid://dfb73r4sgmd8m" path="res://Scenes&Prefabs/Components/hitbox_test.tscn" id="31_f10sy"]
+[ext_resource type="PackedScene" uid="uid://dfb73r4sgmd8m" path="res://Scenes&Prefabs/Entities/hitbox_test.tscn" id="31_f10sy"]
+[ext_resource type="PackedScene" uid="uid://cyad3ejgfu0ns" path="res://Scenes&Prefabs/Entities/ring.tscn" id="32_m637l"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fn0xa"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -410,6 +411,30 @@ player_node_path = NodePath("../Player")
 
 [node name="HitboxTest" parent="." instance=ExtResource("31_f10sy")]
 transform = Transform3D(1, -1.03215e-11, 0, 2.48646e-10, 0.999999, 0, 0, 0, 1, -129.261, 18.4911, 213.393)
+
+[node name="Ring" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03213e-11, 0, 1.90439e-10, 1, 0, 0, 0, 1, -56.7211, 2.99812, 150.027)
+
+[node name="Ring2" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03216e-11, 0, 3.06854e-10, 0.999999, 0, 0, 0, 1, -48.7211, 3.00026, 150.024)
+
+[node name="Ring3" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03216e-11, 0, 3.06854e-10, 0.999999, 0, 0, 0, 1, -43.7211, 3.00161, 150.022)
+
+[node name="Ring4" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03216e-11, 0, 3.06854e-10, 0.999999, 0, 0, 0, 1, -37.7211, 3.00322, 150.019)
+
+[node name="Ring5" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03216e-11, 0, 4.23269e-10, 0.999999, 0, 0, 1.36424e-12, 1, -32.7211, 3.00457, 150.017)
+
+[node name="Ring6" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03215e-11, 0, 6.561e-10, 0.999999, 0, 0, 4.09273e-12, 1, -27.7211, 3.00591, 150.015)
+
+[node name="Ring7" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03213e-11, 0, 6.85204e-10, 0.999999, 0, 0, 4.54747e-12, 1, -21.7211, 3.00752, 150.013)
+
+[node name="Ring8" parent="." instance=ExtResource("32_m637l")]
+transform = Transform3D(1, -1.03211e-11, 0, 7.72515e-10, 0.999998, 0, 0, 5.91172e-12, 1, -15.7211, 3.00913, 150.011)
 
 [editable path="Geom/pieces-showcase/Beeg Wall/BaseRoadPlane2"]
 [editable path="Geom/pieces-showcase/Beeg Wall/BaseRoadPlane"]

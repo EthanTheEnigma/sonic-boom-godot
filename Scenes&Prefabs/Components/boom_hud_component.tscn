@@ -64,3 +64,16 @@ layout_mode = 2
 text = "Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 184.0
+offset_bottom = 36.0
+
+[node name="RingLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Rings: "
+
+[node name="RingCounter" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "100"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyad3ejgfu0ns"]
+
+[ext_resource type="Script" path="res://Scripts/ring.gd" id="1_q7iha"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_a2b4c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w82o1"]
+albedo_color = Color(1, 0.756863, 0.145098, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opukv"]
+size = Vector3(4, 4, 4)
+
+[node name="Ring" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_q7iha")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("TorusMesh_a2b4c")
+surface_material_override/0 = SubResource("StandardMaterial3D_w82o1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_opukv")

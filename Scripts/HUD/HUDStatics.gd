@@ -5,6 +5,7 @@ var boost_available: bool = true
 var boost_energy: float
 var boost_max: float
 var current_speed: float
+var rings: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -5,6 +5,7 @@ class_name BoomHUDComponent
 @onready var boost_bar = $BoostBox/BoostBar
 @onready var speedometer = $HBoxContainer/Speedometer
 @onready var boost_container = $BoostBox
+@onready var ring_counter = $VBoxContainer/RingCounter
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,3 +20,4 @@ func _process(delta):
 	else:
 		boost_container.show()
 	speedometer.value = hud_vars.current_speed
+	ring_counter.text = str(hud_vars.rings)

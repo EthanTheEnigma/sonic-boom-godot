@@ -12,7 +12,10 @@ func _process(delta):
 func register_hitbox(hitbox: HitboxTest):
 	print(str("registering: " + str(hitbox)))
 	hitbox.area_entered.connect(_on_attack_land)
-	print(hitbox.area_entered.get_connections())
+
+func register_ring_hitbox(hitbox: Ring):
+	print(str("registering: " + str(hitbox)))
+	hitbox.area_entered.connect(_on_ring_connect)
 
 func _on_attack_land(area: Area3D):
 	area as SonicHurtbox
@@ -20,3 +23,11 @@ func _on_attack_land(area: Area3D):
 		print("hurtbox not found")
 		return
 	area.launch_player_hit(Vector3(0, 50, 0))
+	area.deduct_rings()
+
+func _on_ring_connect(area: Area3D):
+	area as SonicHurtbox
+	if not area:
+		print("hurtbox not found")
+		return
+	area.add_rings()
